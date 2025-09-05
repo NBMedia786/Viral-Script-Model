@@ -1,16 +1,4 @@
-"""
-review_engine_multi.py — Multi-call runner for the legacy Grammarly-style UI.
 
-What it does
-------------
-• Calls prompts 1..7 (parameter specialists) and 9 (merged meta-synthesis + aggregator).
-• Automatically loads prompts/8.yaml as a GLOBAL PREAMBLE and prepends it to every call
-  so all specialists + aggregator inherit the same strict-but-fair senior-editor rules.
-• Accepts simplified JSON from specialists and converts each to the legacy block the UI expects.
-• Returns final JSON for the UI (scores, per_parameter, overall_rating, strengths, weaknesses,
-  suggestions, drop_off_risks, viral_quotient).
-• overall_rating is decided by 9.yaml (model-driven, holistic) — NOT computed in Python.
-"""
 
 from __future__ import annotations
 

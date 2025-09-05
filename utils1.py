@@ -1,13 +1,4 @@
-# utils1.py
-# -----------------------------------------------------------------------------
-# Utilities for the Viral Script Reviewer:
-# - File loaders (txt / docx with tables & textboxes / pdf)
-# - JSON block extraction from model output
-# - Parameter order constant
-# - AOI (Areas of Improvement) normalization helpers (simplified 4-field schema)
-# - Optional DOCX report renderer (AOIs-first; raw extractions hidden)
-# - Sanitizer for model artifacts (Decision:, Score N, leading numbers, emojis)
-# -----------------------------------------------------------------------------
+
 
 from __future__ import annotations
 
