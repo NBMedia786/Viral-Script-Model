@@ -1,0 +1,427 @@
+{
+  "run_id": "55b0a677-dce9-4dcc-85bd-0c3c1843d5a8",
+  "title": "MIA CAMPOS ",
+  "created_at": "2025-09-04T13:16:18Z",
+  "created_at_human": "2025-09-04 18:46:18",
+  "overall_rating": 8,
+  "scores": {
+    "Suspense Building": 9,
+    "Language/Tone": 9,
+    "Intro + Main Hook/Cliffhanger": 9,
+    "Story Structure + Flow": 9,
+    "Pacing": 9,
+    "Mini-Hooks (30–60s)": 8,
+    "Outro (Ending)": 5
+  },
+  "per_parameter": {
+    "Suspense Building": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Suspense setup is strong, planting clear questions and escalating stakes from the jump. Tension builds consistently with well-timed reveals, especially the medical examiner's call and phone evidence. Mini-hooks are dense and effective, ensuring constant forward momentum and curiosity. The final twist of the bail decision leaves a potent, unsettling sense of unresolved justice.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "Despite these serious accusations, there wasn’t enough evidence to draw any conclusions.",
+          "issue": "[Minor] Flat phrasing; misses opportunity to emphasize detective frustration or lingering doubt.",
+          "fix": "Replace: 'Despite these serious accusations, detectives hit a wall—no concrete evidence to back Jesus's claims, leaving a troubling void.'",
+          "why_this_helps": "Adds emotional weight and highlights the ongoing mystery, preventing a factual statement from feeling like a dead end."
+        },
+        {
+          "quote_verbatim": "The judge didn’t make a decision right away.",
+          "issue": "[Minor] Generic phrasing; could heighten the anticipation of the ruling.",
+          "fix": "Replace: 'The courtroom held its breath, but the judge delayed the ruling, prolonging the agonizing wait for justice.'",
+          "why_this_helps": "Creates a more active sense of anticipation and emphasizes the stakes of the decision."
+        }
+      ],
+      "summary": "Suspense holds steady with clear unanswered questions; only minor polish could make it airtight."
+    },
+    "Language/Tone": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Voice is consistently human and gripping, avoiding dry reporting or tabloid sensationalism. Victim Mia Campos is treated with appropriate respect throughout, focusing on the tragedy. Descriptions are vivid and precise, especially in conveying Jesus Monroy's chilling demeanor.",
+      "weakness": "A few instances of common idioms or slightly generic phrasing slightly dilute the impact.",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "Mia’s death was anything but ordinary.",
+          "issue": "[Minor] Cliché phrasing; could be more impactful.",
+          "fix": "Replace: 'Mia’s death was a horror no one could have predicted.'",
+          "why_this_helps": "Sharpening the language creates a stronger, more unique opening hook."
+        },
+        {
+          "quote_verbatim": "But the state she was found in was far from what anyone had hoped for.",
+          "issue": "[Minor] Understated and generic; lacks the gravity of the discovery.",
+          "fix": "Replace: 'But the state she was found in was a nightmare—far from what anyone had hoped for.'",
+          "why_this_helps": "Adds emotional weight and urgency, matching the severity of the event."
+        },
+        {
+          "quote_verbatim": "By the looks of it, the police could identify that it was not a natural death but a horrific murder.",
+          "issue": "[Minor] 'By the looks of it' is a bit informal and clunky.",
+          "fix": "Replace: 'It was immediately clear to police: this was no natural death, but a horrific murder.'",
+          "why_this_helps": "Tightens the phrasing and makes the statement more authoritative and direct."
+        },
+        {
+          "quote_verbatim": "The possibility of drug involvement began to surface, a troubling angle, especially considering Mia was pregnant and aware of the responsibility she carried. For many, it was hard to imagine someone nurturing a life would put that at risk.",
+          "issue": "[Moderate] Slips into a slightly judgmental tone, breaking objective narration.",
+          "fix": "Rewrite: 'The possibility of drug involvement began to surface, a troubling angle that investigators had to consider, especially given Mia’s pregnancy. It was a detail that complicated the narrative for many.'",
+          "why_this_helps": "Maintains an objective, investigative tone by attributing the 'hard to imagine' sentiment to 'many' rather than the narrator, preserving respect for the victim."
+        },
+        {
+          "quote_verbatim": "What they found offered a glimmer of hope in uncovering the truth.",
+          "issue": "[Minor] 'Glimmer of hope' is a common cliché.",
+          "fix": "Replace: 'What they found offered a crucial breakthrough in uncovering the truth.'",
+          "why_this_helps": "Uses more precise language, avoiding clichés and strengthening the narrative impact."
+        },
+        {
+          "quote_verbatim": "It didn’t just set the record straight; it gave them something far more unsettling to work with.",
+          "issue": "[Minor] 'Set the record straight' is a common idiom.",
+          "fix": "Replace: 'It didn’t just clarify the facts; it gave them something far more unsettling to work with.'",
+          "why_this_helps": "Refreshes the phrasing, making it sound less generic and more direct."
+        },
+        {
+          "quote_verbatim": "Detectives tried everything in the books, even appealing to whatever humanity he had left.",
+          "issue": "[Minor] 'Everything in the books' is a cliché.",
+          "fix": "Replace: 'Detectives exhausted every tactic, even appealing to whatever humanity he had left.'",
+          "why_this_helps": "Uses stronger, more active language, enhancing the sense of desperation and effort."
+        },
+        {
+          "quote_verbatim": "But shockingly, just a few more taps revealed a web of lies they hadn’t anticipated.",
+          "issue": "[Minor] 'Web of lies' is a common idiom.",
+          "fix": "Replace: 'But shockingly, just a few more taps revealed a tangled deception they hadn’t anticipated.'",
+          "why_this_helps": "Refreshes the phrasing, making it sound less generic and more impactful."
+        },
+        {
+          "quote_verbatim": "There were countless ways to try and win his girlfriend back, but no one would have guessed this was the one he chose.",
+          "issue": "[Moderate] Clunky, speculative, and slightly leading; implies a motive before it's fully revealed.",
+          "fix": "Rewrite: 'Detectives found a conversation with his ex-girlfriend, one that took place just hours before Mia’s death. It would shed disturbing light on Jesus’s possible motive—a motive no one could have guessed.'",
+          "why_this_helps": "Rephrases to be more factual and less speculative, building suspense around the motive rather than stating it prematurely or clunkily."
+        },
+        {
+          "quote_verbatim": "However, things took a dramatic turn on February 13, 2025, when a Gwinnett County grand jury indicted him on additional charges...",
+          "issue": "[Minor] 'Dramatic turn' is a common cliché.",
+          "fix": "Replace: 'However, the case escalated on February 13, 2025, when a Gwinnett County grand jury indicted him on additional charges...'",
+          "why_this_helps": "Uses more precise language, avoiding clichés and strengthening the narrative impact."
+        },
+        {
+          "quote_verbatim": "But when the ruling finally came, it stunned everyone.",
+          "issue": "[Minor] 'Stunned everyone' is a generic reaction.",
+          "fix": "Replace: 'But when the ruling finally came, it sent shockwaves through the courtroom.'",
+          "why_this_helps": "Provides a more vivid and specific image of the impact, enhancing engagement."
+        }
+      ],
+      "summary": "Tone is nearly flawless, maintaining a human, respectful, and gripping narrative with only minor spots for polish."
+    },
+    "Intro + Main Hook/Cliffhanger": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Hook lands hard with 'last known footage' and '7-months pregnant teen... found abandoned', immediately grabbing attention. Tone is set immediately: dark, high-stakes mystery with a tragic core. Main hook, 'boyfriend’s chilling secret,' promises a major reveal, locking viewers in for the story. The intro effectively establishes the victim, the tragedy, and the primary suspect within the first 30 seconds.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "But the state she was found in was far from what anyone had hoped for.",
+          "issue": "[Minor] Slightly generic phrasing; could be more impactful.",
+          "fix": "Replace: 'But the state she was found in was a nightmare no one could have prepared for.'",
+          "why_this_helps": "Uses stronger, more evocative language to convey the tragedy and shock, increasing emotional impact."
+        },
+        {
+          "quote_verbatim": "But that only dragged them into a rabbit hole of lies until cops discovered the boyfriend’s chilling secret.",
+          "issue": "[Minor] 'Rabbit hole of lies' is a common idiom; could be more original.",
+          "fix": "Replace: 'But that only led them deeper into a tangled web of deception until cops uncovered the boyfriend’s chilling secret.'",
+          "why_this_helps": "Offers a slightly fresher metaphor while maintaining the promise of escalating mystery and a significant reveal."
+        }
+      ],
+      "summary": "Intro 2 is a very strong opening, immediately establishing high stakes and a clear central mystery, effectively hooking the audience."
+    },
+    "Story Structure + Flow": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Story progresses chronologically with clear cause-and-effect transitions between investigative steps. Act turns are well-defined, moving from discovery to initial suspects, new evidence, interrogation, and legal proceedings. Viewer is consistently oriented through time markers and clear shifts in focus (e.g., interviewing father, then boyfriend, then friend). Each new piece of evidence or testimony logically propels the narrative forward, maintaining momentum.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "The possibility of drug involvement began to surface, a troubling angle, especially considering Mia was pregnant and aware of the responsibility she carried. For many, it was hard to imagine someone nurturing a life would put that at risk.",
+          "issue": "[Moderate] Narrative pause/editorializing that slows investigative momentum.",
+          "fix": "Reframe to keep focus on the investigation's progression: 'Detectives considered the drug angle, but it felt out of character for a pregnant teen, pushing them to look deeper for other motives.'",
+          "why_this_helps": "Maintains forward momentum and keeps the focus on the police's perspective and next steps, rather than a general observation."
+        },
+        {
+          "quote_verbatim": "So far, all investigators knew was that Jesus had been the last person to see Mia alive. There were no visible bruises on her body, no major evidence at the crime scene, and some even questioned whether she had overdosed.",
+          "issue": "[Minor] Slight recap that momentarily slows momentum after a strong reveal (Jesus lied).",
+          "fix": "Rephrase to emphasize the *remaining* mystery despite the lies, building directly into the next reveal: 'Despite Jesus's lies, the *how* of Mia's death remained a mystery—no visible injuries, no clear cause. But that was about to change with a call from the medical examiner.'",
+          "why_this_helps": "Keeps the narrative driving forward, building directly into the next major reveal without a perceived pause."
+        },
+        {
+          "quote_verbatim": "There were countless ways to try and win his girlfriend back, but no one would have guessed this was the one he chose.",
+          "issue": "[Minor] Vague transition; doesn't immediately connect the ex-girlfriend conversation to a 'way to win his girlfriend back.'",
+          "fix": "Clarify the connection or rephrase to directly link the ex-girlfriend conversation to Jesus's motive: 'The conversation with his ex-girlfriend, however, hinted at a disturbing motive for Jesus's actions, revealing a desperate attempt to win her back.'",
+          "why_this_helps": "Provides a clearer, more direct link between the discovered evidence and its significance to the motive, improving flow."
+        }
+      ],
+      "summary": "Flow is consistently clear and logical, guiding the viewer smoothly through the investigation and legal twists."
+    },
+    "Pacing": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Pacing maintains strong forward momentum, consistently driving the narrative without significant lulls. Reveals are well-timed, creating escalating tension and refreshing curiosity throughout the story. The script effectively alternates between investigative beats, emotional moments, and legal twists, keeping the audience engaged. No significant flat spots or chaotic rushes; the story flows clearly and purposefully.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "The two people who discovered Mia lying in the woods, her father, Edward Campos, and the father of her unborn child, Jesus Monroy, claimed they had located her through a friend she had previously shared her location with. To piece together",
+          "issue": "[Moderate] Overly long and dense sentence; slows information intake.",
+          "fix": "Rewrite: 'Mia was found by her father, Edward Campos, and Jesus Monroy, the father of her unborn child. They claimed a friend had shared her location. Investigators interviewed her father first.'",
+          "why_this_helps": "Breaks down complex information into digestible chunks, making it easier to process and maintaining narrative flow."
+        },
+        {
+          "quote_verbatim": "The possibility of drug involvement began to surface, a troubling angle, especially considering Mia was pregnant and aware of the responsibility she carried. For many, it was hard to imagine someone nurturing a life would put that at risk.",
+          "issue": "[Minor] Brief narrative pause; a speculative beat that slightly detours from the main investigation's forward thrust.",
+          "fix": "Condense: 'While drug involvement was a troubling angle, especially for a pregnant teen, detectives couldn't confirm it.'",
+          "why_this_helps": "Tightens the narrative, keeping focus on confirmed facts and the investigation's progression."
+        },
+        {
+          "quote_verbatim": "So far, all investigators knew was that Jesus had been the last person to see Mia alive. There were no visible bruises on her body, no major evidence at the crime scene, and some even questioned whether she had overdosed.",
+          "issue": "[Minor] A brief recap of *lack* of evidence; slightly slows momentum right before a major reveal.",
+          "fix": "Condense: 'Despite Jesus being the last to see Mia, visible evidence was scarce—no bruises, no major crime scene clues, leading some to suspect an overdose.'",
+          "why_this_helps": "Streamlines the recap, maintaining a tighter narrative flow into the subsequent reveal."
+        },
+        {
+          "quote_verbatim": "There were countless ways to try and win his girlfriend back, but no one would have guessed this was the one he chose.",
+          "issue": "[Minor] Vague phrasing; the 'one he chose' is unclear, potentially confusing or anticlimactic.",
+          "fix": "Sharpen: 'But the lengths he went to were beyond comprehension,' or 'But the method he chose was unthinkable.'",
+          "why_this_helps": "Clarifies the implied horror without explicitly stating it too early, maintaining suspense and impact."
+        }
+      ],
+      "summary": "Pacing stays strong and forward-moving overall; only minor polish needed to hit a clean 9/10."
+    },
+    "Mini-Hooks (30–60s)": {
+      "extractions": [],
+      "score": 8,
+      "explanation": "Mini-hooks are generally consistent, appearing every 30-60 seconds to refresh curiosity. Many hooks are specific, escalating the mystery or introducing new, impactful information. The script effectively uses new leads and revelations to drive engagement forward. A few sections could benefit from sharper, more explicit questions to maintain peak tension.",
+      "weakness": "Some informational beats are presented as statements rather than framed as escalating questions, slightly dampening the constant curiosity refresh.",
+      "suggestion": "Review descriptive sections and insert direct, unresolved questions to maintain a consistent 'what happens next?' feeling.",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "Mia Campos was a high school student with dreams of becoming a veterinarian. She had recently learned she was expecting a baby boy. But in a single, tragic moment, everything was shattered.",
+          "issue": "[Minor] Emotional but doesn't pose a new question or mystery beat.",
+          "fix": "Add: 'But who would want to shatter such a promising future?'",
+          "why_this_helps": "Turns a descriptive emotional beat into an active question, driving curiosity about the perpetrator."
+        },
+        {
+          "quote_verbatim": "Jordan claimed that the age gap between Mia and Jesus was a significant factor in their relationship; while Mia was 15, Jesus was 20 years old. She also revealed that Mia's friend group had always been suspicious of Jesus’ behavior.",
+          "issue": "[Moderate] Important information revealed, but lacks a direct question to escalate the mystery immediately.",
+          "fix": "Rephrase: 'Jordan revealed a disturbing age gap and a friend group always suspicious of Jesus. Was this the motive they were looking for, or just another red herring?'",
+          "why_this_helps": "Transforms a statement of fact into a direct question about motive, escalating the mystery and adding uncertainty."
+        },
+        {
+          "quote_verbatim": "Deleted messages from Mia’s phone were successfully recovered, revealing that her last known texts were at 8 PM on the night of July 14, 2024.",
+          "issue": "[Minor] Factual reveal, but could be more impactful as a hook.",
+          "fix": "Add: 'But what secrets did those deleted messages truly hold about Mia's final hours?'",
+          "why_this_helps": "Creates immediate suspense around the content of the messages, making the audience eager for the next revelation."
+        },
+        {
+          "quote_verbatim": "So far, all investigators knew was that Jesus had been the last person to see Mia alive. There were no visible bruises on her body, no major evidence at the crime scene, and some even questioned whether she had overdosed.",
+          "issue": "[Moderate] Recap of uncertainty, but could end with a stronger, more specific question to bridge to the next reveal.",
+          "fix": "Replace: 'So far, all investigators knew was that Jesus had been the last person to see Mia alive. With no visible bruises or major evidence, some even questioned overdose. But the medical examiner's next call would shatter all those assumptions.'",
+          "why_this_helps": "Builds suspense by directly contrasting the lack of evidence with the promise of a 'shattering' medical finding, creating a strong mini-hook."
+        },
+        {
+          "quote_verbatim": "Despite the serious charges against him, Monroy was released on a $56,000 bond on August 29, 2024, posting just 10% of the amount.",
+          "issue": "[Minor] Factual update, but could be framed to heighten the injustice or future implications.",
+          "fix": "Add: 'But would this unexpected freedom allow him to escape justice, or was it merely a temporary reprieve before the real charges hit?'",
+          "why_this_helps": "Raises the stakes of his release and creates anticipation for the next development, adding a layer of dramatic irony."
+        }
+      ],
+      "summary": "Mini-hooks are generally strong and well-paced, consistently driving the narrative forward, though a few spots could be sharpened with more explicit questions to maximize retention.",
+      "suggestions_list": [
+        "Review descriptive sections and insert direct, unresolved questions to maintain a consistent 'what happens next?' feeling.",
+        "Sharpen reveals by adding a 'but why?' or 'what did this mean?' immediately after new information is presented."
+      ]
+    },
+    "Outro (Ending)": {
+      "extractions": [],
+      "score": 5,
+      "explanation": "Ends on a purely factual, procedural note, missing any emotional resonance. Fails to leave a lasting image or a final thought for the viewer. The resolution, while clear, feels abrupt and lacks impact.",
+      "weakness": "The ending is entirely procedural, providing a factual update without any emotional echo or lingering thought about the victim or the implications of the outcome.",
+      "suggestion": "Replace the current factual summary with a line that evokes the injustice or the lasting impact on Mia's family.",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "The judge didn’t make a decision right away. But when the ruling finally came, it stunned everyone. Jesus Monroy was granted a $150,000 cash bond on the new charges. According to online records, he has since been released from custody. He’s",
+          "issue": "[Major] The outro is a purely factual, procedural update. It lacks emotional resonance, a lasting image, or a final thought that connects back to the victim or the broader implications of the case. It ends flat.",
+          "fix": "Replace the purely factual summary with a line that evokes the injustice, the victim's loss, or the unsettling nature of the outcome. For example: 'Despite the new charges and his alleged attempt to flee, Jesus Monroy walks free, leaving Mia's family to grapple with a justice system that often feels anything but just. Her unborn child, a life never lived, remains a silent testament to the darkness he brought.'",
+          "why_this_helps": "Creates a powerful emotional echo, highlights the injustice, and leaves the viewer with a lingering, unsettling thought, which is crucial for true crime retention and discussion."
+        }
+      ],
+      "summary": "The outro provides clear factual closure but completely misses the mark on emotional resonance, ending flat and procedural. A strong emotional echo is needed to leave a lasting impression.",
+      "suggestions_list": [
+        "Replace the current factual summary with a line that evokes the injustice or the lasting impact on Mia's family.",
+        "Add a final sentence that reflects on the victim's lost life or the unsettling nature of the legal outcome."
+      ]
+    }
+  },
+  "strengths": [
+    "Strong suspense setup with escalating stakes and well-timed reveals.",
+    "Consistently human, gripping, and respectful tone, avoiding sensationalism.",
+    "Vivid and precise descriptions enhance the narrative.",
+    "Hook lands hard, immediately grabbing attention and setting a dark, high-stakes tone.",
+    "Main hook promises a major reveal, effectively locking viewers in for the story.",
+    "Intro effectively establishes the victim, tragedy, and primary suspect within the first 30 seconds.",
+    "Story progresses chronologically with clear cause-and-effect transitions between investigative steps.",
+    "Well-defined act turns, moving the narrative forward logically.",
+    "Viewer is consistently oriented through time markers and clear shifts in focus.",
+    "Each new piece of evidence or testimony logically propels the narrative forward, maintaining momentum.",
+    "Pacing maintains strong forward momentum, consistently driving the narrative without significant lulls.",
+    "Reveals are well-timed, creating escalating tension and refreshing curiosity throughout the story.",
+    "Effectively alternates between investigative beats, emotional moments, and legal twists, keeping the audience engaged.",
+    "Mini-hooks are generally consistent, appearing every 30-60 seconds to refresh curiosity.",
+    "Many mini-hooks are specific, escalating the mystery or introducing new, impactful information.",
+    "The script effectively uses new leads and revelations to drive engagement forward."
+  ],
+  "weaknesses": [
+    "The outro is purely factual and procedural, completely lacking emotional resonance or a lasting impression, which is a major missed opportunity.",
+    "Some instances of cliché phrasing and generic language slightly dilute the script's overall impact.",
+    "A few informational beats are presented as statements rather than framed as escalating questions, dampening constant curiosity refresh.",
+    "Brief narrative pauses or editorializing occasionally slow investigative momentum.",
+    "An overly long and dense sentence early in the script slows information intake.",
+    "Slight recaps of a lack of evidence momentarily slow momentum right before major reveals.",
+    "Vague phrasing or transitions in a few spots create minor confusion or anticlimax.",
+    "A brief slip into a slightly judgmental tone regarding drug involvement breaks objective narration.",
+    "Clunky, speculative, and leading phrasing regarding motive implies information before it's fully revealed."
+  ],
+  "suggestions": [
+    "*Outro:** Replace the current factual summary with a line that evokes the injustice, the victim's loss, or the unsettling nature of the outcome, leaving a powerful emotional echo.",
+    "*Mini-Hooks:** Review descriptive sections and insert direct, unresolved questions to maintain a consistent 'what happens next?' feeling, and sharpen reveals by adding 'but why?' or 'what did this mean?' immediately after new information.",
+    "*Language/Tone:** Replace cliché or generic phrasing with more impactful, precise, and active language to enhance narrative strength.",
+    "*Pacing/Structure:** Reframe speculative or editorializing sections to maintain an objective, investigative tone and ensure continuous forward momentum.",
+    "*Pacing:** Break down overly long and dense sentences into digestible chunks for easier information processing.",
+    "*Pacing/Structure:** Streamline any brief recaps of information to maintain a tighter narrative flow into subsequent reveals.",
+    "*Structure:** Clarify vague transitions to directly link discovered evidence to its significance for the motive or next steps.",
+    "*Mini-Hooks:** Turn descriptive emotional beats into active questions to drive curiosity about the perpetrator or next developments.",
+    "*Mini-Hooks:** Frame factual updates about legal proceedings to heighten the sense of injustice or future implications."
+  ],
+  "drop_off_risks": [
+    "*Early Section (Mia's discovery/initial interviews):** An overly long and dense sentence describing Mia's discovery and initial interviews could slow information intake. **Fix:** Break down the complex information into shorter, more digestible sentences.",
+    "*Mid-Section (Drug involvement discussion):** A brief narrative pause for speculative discussion about drug involvement slightly detours from the main investigation's forward thrust. **Fix:** Condense this section, keeping the focus on confirmed facts and the investigation's progression.",
+    "*Mid-Section (Recap of lack of evidence):** A brief recap of the *lack* of evidence momentarily slows momentum right before a major reveal. **Fix:** Streamline this recap to maintain a tighter narrative flow into the subsequent revelation from the medical examiner."
+  ],
+  "viral_quotient": "The script possesses strong viral retention potential due to its excellent hook, consistently strong pacing, and effective mini-hooks that drive continuous engagement. However, the flat, procedural outro is a significant missed opportunity to leave a lasting emotional impact, which could slightly limit its shareability and long-term resonance.",
+  "script_text": "Introduction 1\n\nThis was Jesus Monroy, a major suspect in the death of his girlfriend, 16-year-old Mia Campos.\n\n\nBut Mia’s death was anything but ordinary. What started as a missing persons case quickly spiraled into a maze of twists and turns.\n\n\n\nAnd yet, all roads seemed to lead back to her boyfriend. Soon, the police would uncover his darkest secret.\n\n\n\nIntroduction 2\nThis was the last known footage of 16-year-old Mia, captured just moments before she vanished.\n\nSoon, another 911 call confirmed that the 7-months pregnant teen had been found, abandoned in a forest. But the state she was found in was far from what anyone had hoped for.\n \n\nWith no clear leads, investigators turned their attention to the father of Mia’s unborn child.\n\n\n\n\nBut that only dragged them into a rabbit hole of lies until cops discovered the boyfriend’s chilling secret.\n\nIntro 3\n\nThis 911 call sent police rushing to the scene, where they found Mia Campos, a 7-months-pregnant teen, lying face down on the forest floor.\n\nWith no solid leads, investigators found themselves caught in a strange limbo, chasing shadows, unsure if Mia's story ended there but it had just begun.\n\n\n\n\n\n\nOn July 15, 2024, at 12:45 AM, Georgia police received a 911 call reporting a missing person.\n\n\nJust after 1:00 AM, a second call came in, Mia Campos was found dead near Stephens Road in Loganville. What began as a missing person case had taken a darker turn, sending officers racing to the scene to uncover the truth.\n\n\n\nMia Campos was a high school student with dreams of becoming a veterinarian. She had recently learned she was expecting a baby boy. But in a single, tragic moment, everything was shattered.\n\nBy the looks of it, the police could identify that it was not a natural death but a horrific murder. The investigation team arrived at the scene, securing the area.\n\n\n\n\n\nThey began searching for visible clues to determine the cause of death.\n\n\n\n\n\nWhen nothing physically suspicious stood out, the focus shifted to investigating what had led the family to the scene that night.\n\n\n\n\nThe two people who discovered Mia lying in the woods, her father, Edward Campos, and the father of her unborn child, Jesus Monroy, claimed they had located her through a friend she had previously shared her location with. To piece together the events of that night, investigators chose to interview her father first.\n\nHer father didn’t report anything suspicious, so the police turned their attention to Jesus, hoping his account would shed some light on the tragedy.\n\nAccording to Jesus when Mia revealed her pregnancy to him, she also claimed that the pregnancy resulted from a one-night stand they had together. \n\nIn response, Jesus made a bold claim, alleging he suspected Mia had recently been involved with another man. As the investigation progressed, he further claimed he believed she may have been using drugs.\n\n\n\n\n\nDespite these serious accusations, there wasn’t enough evidence to draw any conclusions.\n\n\n\nThe possibility of drug involvement began to surface, a troubling angle, especially considering Mia was pregnant and aware of the responsibility she carried. For many, it was hard to imagine someone nurturing a life would put that at risk.\n\nAmid growing uncertainty, detectives remained focused on finding a lead. That’s when they received a troubling phone call from Mia’s sister, Marisol Salizar.\n\n\n\nThe call suggested that Mia’s best friend, Jordan, might hold crucial information. The detectives quickly went to her home, eager to find the truth and get justice for Mia.\nWhen they arrived at Jordan’s home, she revealed something chilling and completely unexpected.\n\n\nJordan claimed that the age gap between Mia and Jesus was a significant factor in their relationship; while Mia was 15, Jesus was 20 years old. She also revealed that Mia's friend group had always been suspicious of Jesus’ behavior.\n\nTo verify Jordan’s claims, the detectives examined Mia’s phone, hoping to find messages aligned with her account.\nWhat they found offered a glimmer of hope in uncovering the truth. Deleted messages from Mia’s phone were successfully recovered, revealing that her last known texts were at 8 PM on the night of July 14, 2024.\n\nRahul\n\nThe Evidence Starts to Stack Up (Not to be voiced)\nThese messages revealed something far more critical: Jesus had blatantly lied to the police. To make matters worse, the ring camera footage from Mia’s house showed her walking toward the front of the neighborhood, just as Jordan had claimed. Investigators believed Jesus had suggested this route to avoid having his car captured on any security cameras. \n\nIt was clear now that Jesus wasn’t just hiding the truth. He was actively trying to erase it.\nSo far, all investigators knew was that Jesus had been the last person to see Mia alive. There were no visible bruises on her body, no major evidence at the crime scene, and some even questioned whether she had overdosed.\nBut then, a call from the medical examiner’s office would change everything. It didn’t just set the record straight; it gave them something far more unsettling to work with.\n\nWith that, the police reached out to Jesus. They remained skeptical, unsure if it was the right move to contact him or if he would slip away, knowing the police were onto his lies.\n\n\nHours later, on July 17, 2024, Jesus arrived for a formal interrogation.\n\n\nDuring the interview, Jesus remained unnervingly calm, as if he had memorized a script and was sticking to it.\n\nHis constant denial was infuriating. But detectives had already found the dark secret he tried to hide, and now they were ready to confront him with it.\n\nJesus was acting naive, but detectives saw right through it. They knew they had a suspect who was lying. Now, it wasn’t about whether he did it. It was about why?\n\nTwo lives were gone, and the one man who could explain it all responded with indifference. \n\nJesus just sat there silent. No emotion. No regret. Just a cold, detached stare, like it was all some twisted inconvenience.\n\nDetectives tried everything in the books, even appealing to whatever humanity he had left. \nBut at that point, the real question was whether he had any at all.\nIf anything could prove he was at the crime scene during the murder, it was his phone. Police were about to get that crucial detail, but until then, they feared he might run to evade capture. As a result, he was charged with making false statements to law enforcement.\n\nThe Hidden Lies (Not to be voiced)\nNext, detectives went through his phone. When they had checked his messages with Mia during the interrogation, they realized much had been deleted. They feared other evidence might be gone as well. But shockingly, just a few more taps revealed a web of lies they hadn’t anticipated.\n\nIn his phone, detectives found a conversation with his ex-girlfriend, one that took place just hours before her death. And it could shed disturbing light on Jesus’s possible motive.\n\nThere were countless ways to try and win his girlfriend back, but no one would have guessed this was the one he chose.\nMoreover, the cell phone company records provided damning evidence, placing Jesus at the crime scene on the day of the murder. With this, officers visited him at the Gwinnett County Jail on July 23, 2024. However, they couldn’t question him further without his attorney present since the preliminary trial had already taken place.\n\nDespite the serious charges against him, Monroy was released on a $56,000 bond on August 29, 2024, posting just 10% of the amount.\nHowever, things took a dramatic turn on February 13, 2025, when a Gwinnett County grand jury indicted him on additional charges, including statutory rape, child molestation, and enticing a child for indecent purposes. This came after new evidence was uncovered by the District Attorney’s Special Victims Unit.\nAfter six months of walking free, Monroy was taken back into custody, this time, with no bond and nowhere to run. In court, even more details came to light, making the case against him even stronger. \n\n\nThis hearing focused on whether Jesus should be granted bail again. But he had already shown signs of trying to run. When officers moved in to arrest him the second time, he allegedly tried to flee. A police drone captured it all from above his house. But officers managed to track him down inside the house and placed him in the back of a patrol car.\n\nThe judge didn’t make a decision right away. But when the ruling finally came, it stunned everyone. Jesus Monroy was granted a $150,000 cash bond on the new charges. According to online records, he has since been released from custody. He’s now under strict house arrest, ordered to have no contact with Mia Campos’s family, and must wear a 24/7 ankle monitor.\n\n\n\n",
+  "source_docx_path": "C:\\Users\\pc\\AppData\\Local\\Temp\\tmp4lfy_rea.docx",
+  "aoi_match_ranges": {
+    "Suspense_Building-AOI-1": [
+      2886,
+      2974
+    ],
+    "Suspense_Building-AOI-2": [
+      8401,
+      8445
+    ],
+    "Language/Tone-AOI-1": [
+      117,
+      155
+    ],
+    "Language/Tone-AOI-2": [
+      574,
+      644
+    ],
+    "Language/Tone-AOI-3": [
+      1679,
+      1779
+    ],
+    "Language/Tone-AOI-4": [
+      2978,
+      3217
+    ],
+    "Language/Tone-AOI-5": [
+      3998,
+      4064
+    ],
+    "Language/Tone-AOI-6": [
+      5016,
+      5112
+    ],
+    "Language/Tone-AOI-7": [
+      6021,
+      6111
+    ],
+    "Language/Tone-AOI-8": [
+      6684,
+      6768
+    ],
+    "Language/Tone-AOI-9": [
+      6953,
+      7071
+    ],
+    "Language/Tone-AOI-10": [
+      7535,
+      7663
+    ],
+    "Language/Tone-AOI-11": [
+      8446,
+      8500
+    ],
+    "Intro_+_Main_Hook/Cliffhanger-AOI-1": [
+      574,
+      644
+    ],
+    "Intro_+_Main_Hook/Cliffhanger-AOI-2": [
+      747,
+      855
+    ],
+    "Story_Structure_+_Flow-AOI-1": [
+      2978,
+      3217
+    ],
+    "Story_Structure_+_Flow-AOI-2": [
+      4717,
+      4938
+    ],
+    "Story_Structure_+_Flow-AOI-3": [
+      6953,
+      7071
+    ],
+    "Pacing-AOI-1": [
+      2060,
+      2299
+    ],
+    "Pacing-AOI-2": [
+      2978,
+      3217
+    ],
+    "Pacing-AOI-3": [
+      4717,
+      4938
+    ],
+    "Pacing-AOI-4": [
+      6953,
+      7071
+    ],
+    "Mini-Hooks_(30–60s)-AOI-1": [
+      1488,
+      1677
+    ],
+    "Mini-Hooks_(30–60s)-AOI-2": [
+      3650,
+      3882
+    ],
+    "Mini-Hooks_(30–60s)-AOI-3": [
+      4065,
+      4207
+    ],
+    "Mini-Hooks_(30–60s)-AOI-4": [
+      4717,
+      4938
+    ],
+    "Mini-Hooks_(30–60s)-AOI-5": [
+      7404,
+      7534
+    ],
+    "Outro_(Ending)-AOI-1": [
+      8401,
+      8641
+    ]
+  },
+  "_path": "outputs\\_history\\20250904_131618_mia-campos.json"
+}

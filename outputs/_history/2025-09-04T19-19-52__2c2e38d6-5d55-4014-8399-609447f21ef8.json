@@ -1,0 +1,531 @@
+{
+  "run_id": "2c2e38d6-5d55-4014-8399-609447f21ef8",
+  "title": "uploaded_script",
+  "created_at": "2025-09-04T19:19:52",
+  "created_at_human": "2025-09-04 19:19:52",
+  "overall_rating": 8,
+  "scores": {
+    "Suspense Building": 9,
+    "Language/Tone": 8,
+    "Intro + Main Hook/Cliffhanger": 9,
+    "Story Structure + Flow": 8,
+    "Pacing": 9,
+    "Mini-Hooks (30–60s)": 8,
+    "Outro (Ending)": 5
+  },
+  "data": {
+    "scores": {
+      "Suspense Building": 9,
+      "Language/Tone": 8,
+      "Intro + Main Hook/Cliffhanger": 9,
+      "Story Structure + Flow": 8,
+      "Pacing": 9,
+      "Mini-Hooks (30–60s)": 8,
+      "Outro (Ending)": 5
+    },
+    "per_parameter": {
+      "Suspense Building": {
+        "extractions": [],
+        "score": 9,
+        "explanation": "Script consistently plants clear, unsettling questions and shifts suspicion, effectively pulling the audience forward. Reveals are well-timed, often followed by new questions or obstacles that maintain tension. Strong use of mini-hooks and foreshadowing keeps the audience invested in what's coming next. The narrative skillfully balances the 'who' and 'why' throughout the investigation, preventing early resolution.",
+        "weakness": "Not present",
+        "suggestion": "Not present",
+        "areas_of_improvement": [
+          {
+            "quote_verbatim": "After uncovering her lies, detectives knew they were getting closer to the truth, and revealing her real intentions was only a matter of time.",
+            "issue": "[Minor] Generic phrasing; slightly diminishes the immediate impact of the lies being uncovered.",
+            "fix": "Replace with: 'With each lie exposed, the detectives felt the truth tightening its grip—Rachita's real intentions were about to break free.'",
+            "why_this_helps": "Creates a more active, visceral sense of impending revelation, heightening anticipation."
+          },
+          {
+            "quote_verbatim": "After carefully scrutinizing bodycam footage, the detectives came to a chilling conclusion. After all these, she had already been proven to be a criminal-minded, evil person, but the way she tried to frame her son to escape the murder charg",
+            "issue": "[Moderate] The 'chilling conclusion' is immediately summarized and told, rather than allowing the audience to process the reveal or building to a more specific, impactful statement. The second sentence is redundant and tells the audience how to feel.",
+            "fix": "Reorder/Rewrite: 'After carefully scrutinizing bodycam footage, the detectives came to a chilling conclusion: Rachita, the mother, was the shooter. But what truly shocked them was her calculated attempt to frame her own son to escape the murder charge.'",
+            "why_this_helps": "Delivers the core reveal (she was the shooter) directly after the build-up, then adds the shocking detail about framing the son, making the impact stronger and more specific."
+          }
+        ],
+        "summary": "Suspense holds steady with clear unanswered questions and well-timed reveals; only minor polish could make it airtight."
+      },
+      "Language/Tone": {
+        "extractions": [],
+        "score": 8,
+        "explanation": "Tone is largely consistent and respectful, avoiding sensationalism for the most part. Language is clear and direct, making the narrative easy to follow without unnecessary jargon. Occasional generic phrasing and one instance of overtly judgmental language slightly pull down the overall sharpness and objectivity.",
+        "weakness": "The script occasionally uses generic or slightly cliché phrasing, and one line becomes overtly judgmental, breaking the objective narrative voice.",
+        "suggestion": "Refine instances of common phrases to make the narration more unique and impactful.",
+        "areas_of_improvement": [
+          {
+            "quote_verbatim": "But there were still too many things that couldn’t be mere coincidences.",
+            "issue": "[Minor] Cliché phrasing, lacks narrative punch.",
+            "fix": "Replace: 'But the mounting evidence pointed to something far more deliberate.'",
+            "why_this_helps": "Sharpens the language, avoids cliché, and maintains an investigative tone."
+          },
+          {
+            "quote_verbatim": "And the unanswered questions they had only Rachita could answer.",
+            "issue": "[Minor] Slightly clunky phrasing.",
+            "fix": "Rewrite: 'Only Rachita held the keys to their unanswered questions.'",
+            "why_this_helps": "More concise and impactful phrasing."
+          },
+          {
+            "quote_verbatim": "This new revelation changed the direction of the investigation, and the truth was about to come out when Rachita was called in for further interrogation at the police station.",
+            "issue": "[Moderate] Cliché ('truth was about to come out') and slightly wordy/procedural.",
+            "fix": "Rewrite: 'This revelation shifted the investigation's focus, leading detectives to call Rachita in for a deeper interrogation.'",
+            "why_this_helps": "Tightens the phrasing, removes cliché, and maintains a more active voice."
+          },
+          {
+            "quote_verbatim": "Detectives found it strange that, at one point, she made them suspicious of her son, but at the same time, she was trying not to reveal much about him.",
+            "issue": "[Minor] 'Found it strange that' is a bit plain.",
+            "fix": "Replace: 'Detectives noted her perplexing behavior: simultaneously deflecting suspicion onto her son while shielding him from their questions.'",
+            "why_this_helps": "Elevates word choice, makes the observation more active and vivid."
+          },
+          {
+            "quote_verbatim": "After all these, she had already been proven to be a criminal-minded, evil person, but the way she tried to frame her son to escape the murder charge was truly shocking.",
+            "issue": "[Major] Overtly judgmental and sensational language, breaks objective narrative tone.",
+            "fix": "Rewrite: 'The extent of her deception was chilling, especially her attempt to implicate her own son to evade a murder charge.'",
+            "why_this_helps": "Maintains an objective, investigative tone while still conveying the severity of her actions, without resorting to subjective labels."
+          },
+          {
+            "quote_verbatim": "However, the authorities were confident that they had enough evidence to prove her guilt in court, ensuring justice for Travis' family and loved ones.",
+            "issue": "[Minor] 'Ensuring justice' is a generic closing phrase.",
+            "fix": "Replace: 'confident they had built an undeniable case, ready to seek accountability for Travis' family and loved ones.'",
+            "why_this_helps": "More specific and impactful phrasing, avoids cliché."
+          }
+        ],
+        "summary": "The script's tone is generally clear, human, and respectful, but could benefit from sharpening some generic phrases and reining in occasional judgmental language to maintain a consistently objective narrative.",
+        "suggestions_list": [
+          "Refine instances of common phrases to make the narration more unique and impactful.",
+          "Rephrase the judgmental description of Rachita to maintain a more objective, investigative tone."
+        ]
+      },
+      "Intro + Main Hook/Cliffhanger": {
+        "extractions": [],
+        "score": 9,
+        "explanation": "Immediate intrigue is strong, with the 'unexpected discovery' quickly establishing a central mystery. Tone is set for a complex, shifting investigation, pulling the viewer into the suspense without delay. The main hook lands early, introducing Rachita as a suspect and then immediately complicating that with new evidence and a potential new suspect. Pacing is quick, diving straight into the investigation's twists and turns.",
+        "weakness": "The very first sentence is a bit procedural and could be punchier to immediately grab attention.",
+        "suggestion": "Not present",
+        "areas_of_improvement": [
+          {
+            "quote_verbatim": "The cops were now certain that this time, they would finally talk to Rachita and collect crucial details.",
+            "issue": "[Minor] Opening is a bit dry and procedural; doesn't immediately hook with mystery or action.",
+            "fix": "Replace: 'The case had stalled, but now, detectives had a new lead: Rachita. And what they found next would blow the investigation wide open.'",
+            "why_this_helps": "Creates immediate suspense and promises a significant twist, drawing viewers in faster."
+          }
+        ],
+        "summary": "The intro quickly establishes intrigue and a shifting mystery, with strong hooks that pull the viewer in. Only minor polish needed on the very first line."
+      },
+      "Story Structure + Flow": {
+        "extractions": [],
+        "score": 8,
+        "explanation": "Act turns are generally clear, moving logically from initial suspicion to interrogation, lie detection, and breakthrough. Transitions mostly use clear cause-and-effect or chronological markers, keeping the viewer oriented through the investigation. The narrative maintains forward momentum without significant backtracking or confusion, ensuring a steady pace. A few instances of premature narrative judgment slightly dampen the discovery process for the viewer.",
+        "weakness": "Narrator occasionally pre-empts reveals or makes definitive judgments before the evidence is fully presented, reducing suspense.",
+        "suggestion": "Not present",
+        "areas_of_improvement": [
+          {
+            "quote_verbatim": "This discovery made them question if someone else in the neighbourhood was involved.",
+            "issue": "[Minor] Ambiguous reference; 'this discovery' is vague.",
+            "fix": "Replace with: 'The gun shell casing discovery made them question if someone else in the neighbourhood was involved.'",
+            "why_this_helps": "Clarifies the specific evidence driving the investigation, improving flow and precision."
+          },
+          {
+            "quote_verbatim": "At one point, they began to consider the possibility that Rachita was innocent.",
+            "issue": "[Minor] Generic phrasing 'At one point' is weak; lacks specificity.",
+            "fix": "Replace with: 'Initially, they even considered the possibility that Rachita was innocent.'",
+            "why_this_helps": "Adds a clearer temporal marker and strengthens the narrative voice, making the shift in thought more impactful."
+          },
+          {
+            "quote_verbatim": "At this point, she didn't realize that this detail would eventually unravel her lie to the detectives.",
+            "issue": "[Moderate] Premature reveal; spoils future plot point and reduces suspense.",
+            "fix": "Cut this sentence. Let the lie unravel naturally when detectives present the evidence.",
+            "why_this_helps": "Maintains suspense and allows the viewer to discover the lie alongside the detectives, enhancing engagement."
+          },
+          {
+            "quote_verbatim": "Detectives found it strange that, at one point, she made them suspicious of her son, but at the same time, she was trying not to reveal much about him.",
+            "issue": "[Minor] Passive voice and generic 'at one point'; could be more active and precise.",
+            "fix": "Rewrite: 'Detectives noted her strange contradiction: she made them suspicious of her son, yet simultaneously shielded him.'",
+            "why_this_helps": "Strengthens the narrative voice and makes the observation more direct and impactful, improving flow."
+          },
+          {
+            "quote_verbatim": "After all these, she had already been proven to be a criminal-minded, evil person, but the way she tried to frame her son to escape the murder charge was truly shocking.",
+            "issue": "[Major] Premature narrative judgment; tells the viewer a conclusion before the full evidence is presented or the trial occurs.",
+            "fix": "Rephrase to reflect the *detectives' growing realization* or *mounting evidence* rather than a definitive narrator judgment. E.g., 'The mounting evidence painted a chilling picture: not only was she involved, but her attempt to frame her son was truly shocking.'",
+            "why_this_helps": "Keeps the narrative in an investigative mode, allowing the viewer to draw conclusions as evidence unfolds, enhancing engagement and suspense."
+          }
+        ],
+        "summary": "The story's structure is solid and the flow is mostly clear, but a few instances of the narrator pre-empting reveals slightly reduce the impact of the investigative journey."
+      },
+      "Pacing": {
+        "extractions": [],
+        "score": 9,
+        "explanation": "Pacing is consistently strong, with a clear progression of events and discoveries that maintain forward momentum. Reveals are well-timed, creating immediate consequences or new questions that drive the narrative without feeling rushed or stalled. The script effectively alternates between investigative beats, suspect interviews, and breakthroughs, keeping the audience engaged. No significant flat sections or confusing jumps; the story flows logically from one development to the next.",
+        "weakness": "Not present",
+        "suggestion": "Not present",
+        "areas_of_improvement": [
+          {
+            "quote_verbatim": "When asked about the whole incident, she gave a detailed account.",
+            "issue": "[Minor] Generic phrasing, tells rather than shows, slightly slows the narrative.",
+            "fix": "Replace with a specific detail or a mini-hook about the *impact* of her account: 'Her detailed account seemed convincing, but one small detail would soon unravel her story.'",
+            "why_this_helps": "Adds immediate tension and foreshadowing, maintaining forward momentum instead of a flat statement."
+          },
+          {
+            "quote_verbatim": "After Rachita's son refused to cooperate, detectives were left with limited information that made the investigation harder to continue. So, they decided to take their next step accordingly.",
+            "issue": "[Minor] Slightly verbose and generic description of a setback, momentarily slows urgency.",
+            "fix": "Condense and sharpen: 'With Rachita's son refusing to cooperate, detectives faced a dead end—until a confidential source offered a glimmer of hope.'",
+            "why_this_helps": "Tightens the narrative, maintains urgency, and directly sets up the next breakthrough, preventing a dip."
+          },
+          {
+            "quote_verbatim": "After all these, she had already been proven to be a criminal-minded, evil person, but the way she tried to frame her son to escape the murder charge was truly shocking.",
+            "issue": "[Minor] Redundant summary of Rachita's character before the main point, slightly dilutes the impact of the 'shocking' reveal.",
+            "fix": "Trim the redundant setup: 'The way she tried to frame her own son to escape the murder charge was truly shocking.'",
+            "why_this_helps": "Gets straight to the emotional punch, making the reveal more impactful and maintaining a sharper pace."
+          }
+        ],
+        "summary": "Pacing stays strong and forward-moving overall; only minor polish needed to hit a clean 9/10."
+      },
+      "Mini-Hooks (30–60s)": {
+        "extractions": [],
+        "score": 8,
+        "explanation": "Mini-hooks are generally frequent and well-placed, often escalating the mystery effectively. Many hooks are specific, like 'something completely unexpected' or 'unravel her lie,' which builds strong anticipation. A few stretches rely on generic teases or descriptive narrative, slightly dampening consistent curiosity. The script successfully introduces new suspects and twists, maintaining engagement through key revelations.",
+        "weakness": "Some mini-hooks use generic phrasing, such as 'getting closer to the truth,' which could be sharpened for greater impact.",
+        "suggestion": "Sharpen any generic teases into more specific, unresolved questions that directly relate to character motives or upcoming plot twists.",
+        "areas_of_improvement": [
+          {
+            "quote_verbatim": "This new revelation changed the direction of the investigation, and the truth was about to come out when Rachita was called in for further interrogation at the police station.",
+            "issue": "[Minor] Slightly generic phrasing; 'truth was about to come out' is a common trope.",
+            "fix": "Replace 'the truth was about to come out' with a more specific tease about *what* new direction the investigation was taking or *what* specific truth was at stake.",
+            "why_this_helps": "Sharpening the language makes the hook more impactful and less cliché, increasing anticipation."
+          },
+          {
+            "quote_verbatim": "Detectives found it strange that, at one point, she made them suspicious of her son, but at the same time, she was trying not to reveal much about him.",
+            "issue": "[Minor] Observation, not a direct mini-hook. It describes the detectives' thought process but doesn't pose a new question for the viewer.",
+            "fix": "Rephrase to pose a question: 'What was her true motive in this contradictory dance—was she framing him, or protecting a darker secret?'",
+            "why_this_helps": "Turns a descriptive observation into an active question, directly engaging the viewer's curiosity about Rachita's motives."
+          },
+          {
+            "quote_verbatim": "After uncovering her lies, detectives knew they were getting closer to the truth, and revealing her real intentions was only a matter of time.",
+            "issue": "[Minor] Generic phrasing; 'getting closer to the truth' is vague and doesn't escalate specific stakes.",
+            "fix": "Replace 'getting closer to the truth' with a more concrete hint of the next discovery: 'But the biggest lie, and her true intentions, were still hidden, waiting to surface.'",
+            "why_this_helps": "Provides a more specific and compelling reason to keep watching, promising a significant reveal rather than a general progression."
+          },
+          {
+            "quote_verbatim": "After Rachita's son refused to cooperate, detectives were left with limited information that made the investigation harder to continue. So, they decided to take their next step accordingly.",
+            "issue": "[Moderate] Flat section; describes a setback and a generic next step without posing a new question or twist. This is a potential drop-off point.",
+            "fix": "Add a mini-hook here: 'With their prime suspect uncooperative, how would detectives find the crucial lead they desperately needed to break the case?'",
+            "why_this_helps": "Transforms a narrative lull into a question that re-engages the audience and builds anticipation for the next development."
+          },
+          {
+            "quote_verbatim": "After all these, she had already been proven to be a criminal-minded, evil person, but the way she tried to frame her son to escape the murder charge was truly shocking.",
+            "issue": "[Minor] This is a statement of conclusion/emotion, not a mini-hook. It summarizes a character trait rather than posing a new mystery or escalating the plot.",
+            "fix": "Rephrase to maintain suspense or pose a lingering question about her motives/future: 'But even with her true nature revealed, what other dark secrets did Rachita still hold, and what would be her ultimate fate?'",
+            "why_this_helps": "Keeps the audience engaged with lingering questions about the character, rather than just stating a conclusion."
+          }
+        ],
+        "summary": "Mini-hooks are mostly strong and well-distributed, effectively driving curiosity. Sharpening a few generic teases and adding a hook in a flat spot would push this into near-flawless territory.",
+        "suggestions_list": [
+          "Sharpen any generic teases into more specific, unresolved questions that directly relate to character motives or upcoming plot twists.",
+          "Review the ~03:00 mark (after Rachita's son refuses to cooperate) to ensure a strong, specific question is posed to bridge the narrative lull."
+        ]
+      },
+      "Outro (Ending)": {
+        "extractions": [],
+        "score": 5,
+        "explanation": "CTAs are placed too early, immediately after the only emotional beat, killing any lingering impact. The ending feels like a direct engagement prompt rather than a reflective, resonant close. No strong final image or line to leave viewers with a lasting impression.",
+        "weakness": "The outro completely fails to establish a distinct, lingering emotional echo before transitioning into calls to action, making the ending feel abrupt and procedural.",
+        "suggestion": "Reorder the ending: Deliver a powerful, resonant final line/image first, then offer condolences, and *only then* introduce CTAs.",
+        "areas_of_improvement": [
+          {
+            "quote_verbatim": "Before we conclude we want to extend our heartfelt condolences for Travis Hobbs and his loved ones. What are your thoughts on this case? Share your thoughts in the comment section below; we would love to hear from you. And don't forget to l",
+            "issue": "[Major] CTAs appear immediately after a brief emotional beat, preventing any lasting emotional echo. The ending feels like a direct call to action, not a reflective close.",
+            "fix": "Reorder: First, deliver a strong, lingering emotional line/image that resonates. Then, offer condolences. Finally, place all CTAs (questions, comments, like/share/subscribe) at the very end.",
+            "why_this_helps": "Ensures the video ends with a powerful, lingering impression, allowing the emotional impact to settle before the audience is prompted to engage, improving retention and overall viewer experience."
+          }
+        ],
+        "summary": "The outro provides closure but completely misses the mark on emotional resonance and CTA timing, making it feel flat and procedural.",
+        "suggestions_list": [
+          "Reorder the ending: Deliver a powerful, resonant final line/image first, then offer condolences, and *only then* introduce CTAs.",
+          "Craft a specific, haunting final sentence that encapsulates the tragedy or the perpetrator's nature, allowing the audience to reflect."
+        ]
+      }
+    },
+    "overall_rating": 8,
+    "strengths": [
+      "Strong, immediate hook establishes intrigue and a shifting mystery early.",
+      "Suspense is consistently built with unsettling questions and well-timed reveals.",
+      "Pacing is consistently strong, driving the narrative forward without lulls.",
+      "Story structure is clear, with logical act turns and smooth transitions.",
+      "Mini-hooks are frequent and effective, escalating the mystery and maintaining engagement.",
+      "Tone is largely clear, direct, and respectful, making the narrative easy to follow."
+    ],
+    "weaknesses": [
+      "The outro is abrupt and procedural, failing to create a lasting emotional echo.",
+      "Occasional generic or cliché phrasing weakens narrative impact and sharpness.",
+      "The narrator sometimes pre-empts reveals or makes definitive judgments too early, reducing suspense.",
+      "One instance of overtly judgmental language breaks the objective narrative tone.",
+      "A section after the son refuses to cooperate is flat and lacks a strong mini-hook.",
+      "The very first sentence is a bit dry and procedural."
+    ],
+    "suggestions": [
+      "Reorder the ending: Deliver a powerful, resonant final line/image first, then offer condolences, and *only then* introduce CTAs.",
+      "Sharpen generic phrasing and clichés throughout the script for greater impact and uniqueness.",
+      "Rephrase overtly judgmental language to maintain an objective, investigative tone.",
+      "Cut premature reveals to allow the audience to discover information alongside the detectives.",
+      "Strengthen the opening sentence to immediately grab attention with mystery or action.",
+      "Insert a strong, specific mini-hook around the ~03:00 mark (after the son refuses to cooperate) to bridge the narrative lull.",
+      "Clarify ambiguous references and strengthen temporal markers for better flow."
+    ],
+    "drop_off_risks": [
+      "The section after Rachita's son refuses to cooperate (around ~03:00 mark) is a flat spot; add a strong mini-hook to re-engage viewers.",
+      "The outro's immediate transition to CTAs kills emotional resonance; reorder to end with a powerful, lingering image before any calls to action."
+    ],
+    "viral_quotient": "The script's strong opening hook, consistent pacing, and frequent mini-hooks provide solid viral retention potential. However, the abrupt outro could diminish the overall impact and shareability."
+  },
+  "script_text": "\nScript for (V.O)\n\n\nNew Leads:\n\nThe cops were now certain that this time, they would finally talk to Rachita and collect crucial details. \n\nAfter the shooting near Rachita’s house, a gun shell casing was found, making her a suspect. As a result, the cops searched her home and found something completely unexpected.\n\nThis discovery made them question if someone else in the neighbourhood was involved.\n\nAt one point, they began to consider the possibility that Rachita was innocent. But there were still too many things that couldn’t be mere coincidences. And the unanswered questions they had only Rachita could answer.\n\nSoon  Rachita arrived and detectives started questioning her regarding the incident where she acknowledged seeing Travis’ car. \n\n\nRachita stated that, Travis intentionally hit her vehicle and when her son objected, Travis threatened him with a gun. This revelation instantly made Rachita’s son a suspect in the detectives' eyes. It was possible that, due to ongoing tensions, Rachita’s son shot Travis during the altercation.\n\nThis new revelation changed the direction of the investigation, and the truth was about to come out when Rachita was called in for further interrogation at the police station.\n\n\nRachita’s Interrogation-\nAt first, the detectives asked about her relationship with Travis.\n \nAccording to her, Travis wasn’t a problem until he drank and became aggressive. But she claimed to have no idea why Travis was near her house that night.\n\nWhen asked about the whole incident, she gave a detailed account.\n\nAlthough she was inside the house when the shooting happened, she claimed to have witnessed it from her bathroom window. At this point, she didn't realize that this detail would eventually unravel her lie to the detectives.\n\nHowever, the detectives next focused on what had happened between her son and Travis just before the shooting. \n\nRachita claimed her son was not on bad terms with his stepfather, Travis, but detectives suspected she was hiding something far more sinister. When asked for her son's location, she seemed to make excuses to keep him out of the detectives' reach.\n \nDetectives found it strange that, at one point, she made them suspicious of her son, but at the same time, she was trying not to reveal much about him. \n\nDetectives saw two possibilities. Either she was trying to save herself by framing her son for the murder, or she was hiding a dark secret to protect him. \n\nTo unravel the puzzle, they paused the interrogation and looked into her son’s background and what they discovered immediately made him a suspect.\n \nWith all the new details, detectives resumed interrogation to uncover any possible motive behind the murder.  \n\nShe repeatedly denied knowing why Travis was outside his house that night, insisting that they rarely spoke. Detectives then showed a photo of her son, seeking further confirmation of their findings.\n \nNoticing her shrewd tactics when detectives showed the evidence collected from her house, she denied any involvement, but they kept pressing her. \n\nDespite their efforts, she did not reveal much and stuck to her story. So, the only option left was to speak with her son.\n\n\nCatching Lies-\nBefore reaching out to her son, the detectives verified her statements during the interrogation and uncovered multiple lies. \n \nDespite Rachita's claim, the detectives found no evidence that her truck had been hit by Travis' car, clearly exposing her lie. But that wasn’t the only lie she told; more were starting to surface.\n\nAfter uncovering her lies, detectives knew they were getting closer to the truth, and revealing her real intentions was only a matter of time. \n\nOn the morning of January 28, 2024, detectives attempted to speak with Rachita's son to gather more information, but unfortunately, they were unsuccessful. \n\nAfter Rachita's son refused to cooperate, detectives were left with limited information that made the investigation harder to continue. So, they decided to take their next step accordingly.\n\n\nThe Breakthrough-\nThough they didn’t expect much from the confidential source, they had no idea an unexpected breakthrough was coming.\n \nThe source revealed that Rachita was the one who shot Travis, and it was over something as trivial as a car bump. \n\nHowever, the statement from the confidential source was not enough to arrest Rachita and cops needed additional evidence. They then conducted a thorough re-examination of Travis' truck. \n\nThey found no sign of a gun in his truck, which exposed another of Rachita's lies. To uncover more, they took their next step, which would soon reveal something crucial they had previously missed.\n \nWhile reexamining the crime scene footage from the body cam, they spotted Rachita. \n\nAfter carefully scrutinizing bodycam footage, the detectives came to a chilling conclusion. \n\nAfter all these, she had already been proven to be a criminal-minded, evil person, but the way she tried to frame her son to escape the murder charge was truly shocking.\n\nTalking to Travis' mother, detectives uncovered even more disturbing truths about Rachita's intentions. \n \nWith this evidence, they obtained an arrest warrant for Rachita on charges of second-degree murder. But, they couldn't arrest her as she was on the run.\n\nEven 45 days after the arrest warrant was issued, Rachita remained at large. However, on March 21, 2024, she finally surrendered to the authorities.\n\nAfter her arrest, the detectives tried to question her again, but she refused to provide any additional information. \n\nHowever, the authorities were confident that they had enough evidence to prove her guilt in court, ensuring justice for Travis' family and loved ones. \n\n\nClosure:\n\nBefore we conclude we want to extend our heartfelt condolences for Travis Hobbs and his loved ones.\n\nWhat are your thoughts on this case?\n\nShare your thoughts in the comment section below; we would love to hear from you. And don't forget to like, share, and subscribe for more such episodes.\n\n\n\n\n\n\n",
+  "source_docx_path": "C:\\Users\\pc\\AppData\\Local\\Temp\\tmptptxjfi1.docx",
+  "heading_ranges": [],
+  "spans_by_param": {
+    "Suspense Building": [
+      [
+        3519,
+        3661,
+        "#ff6b6b",
+        "Suspense_Building-AOI-1"
+      ],
+      [
+        4739,
+        4982,
+        "#ff6b6b",
+        "Suspense_Building-AOI-2"
+      ]
+    ],
+    "Language/Tone": [
+      [
+        483,
+        555,
+        "#6b8cff",
+        "Language/Tone-AOI-1"
+      ],
+      [
+        556,
+        620,
+        "#6b8cff",
+        "Language/Tone-AOI-2"
+      ],
+      [
+        1049,
+        1224,
+        "#6b8cff",
+        "Language/Tone-AOI-3"
+      ],
+      [
+        2130,
+        2281,
+        "#6b8cff",
+        "Language/Tone-AOI-4"
+      ],
+      [
+        4833,
+        5002,
+        "#6b8cff",
+        "Language/Tone-AOI-5"
+      ],
+      [
+        5534,
+        5684,
+        "#6b8cff",
+        "Language/Tone-AOI-6"
+      ]
+    ],
+    "Intro + Main Hook/Cliffhanger": [
+      [
+        32,
+        137,
+        "#ffb86b",
+        "Intro_+_Main_Hook/Cliffhanger-AOI-1"
+      ]
+    ],
+    "Story Structure + Flow": [
+      [
+        317,
+        401,
+        "#a78bfa",
+        "Story_Structure_+_Flow-AOI-1"
+      ],
+      [
+        403,
+        482,
+        "#a78bfa",
+        "Story_Structure_+_Flow-AOI-2"
+      ],
+      [
+        1664,
+        1766,
+        "#a78bfa",
+        "Story_Structure_+_Flow-AOI-3"
+      ],
+      [
+        2130,
+        2281,
+        "#a78bfa",
+        "Story_Structure_+_Flow-AOI-4"
+      ],
+      [
+        4833,
+        5002,
+        "#a78bfa",
+        "Story_Structure_+_Flow-AOI-5"
+      ]
+    ],
+    "Pacing": [
+      [
+        1476,
+        1541,
+        "#f43f5e",
+        "Pacing-AOI-1"
+      ],
+      [
+        3822,
+        4011,
+        "#f43f5e",
+        "Pacing-AOI-2"
+      ],
+      [
+        4833,
+        5002,
+        "#f43f5e",
+        "Pacing-AOI-3"
+      ]
+    ],
+    "Mini-Hooks (30–60s)": [
+      [
+        1049,
+        1224,
+        "#eab308",
+        "Mini-Hooks_(30–60s)-AOI-1"
+      ],
+      [
+        2130,
+        2281,
+        "#eab308",
+        "Mini-Hooks_(30–60s)-AOI-2"
+      ],
+      [
+        3519,
+        3661,
+        "#eab308",
+        "Mini-Hooks_(30–60s)-AOI-3"
+      ],
+      [
+        3822,
+        4011,
+        "#eab308",
+        "Mini-Hooks_(30–60s)-AOI-4"
+      ],
+      [
+        4833,
+        5002,
+        "#eab308",
+        "Mini-Hooks_(30–60s)-AOI-5"
+      ]
+    ],
+    "Outro (Ending)": [
+      [
+        5698,
+        5944,
+        "#8b5cf6",
+        "Outro_(Ending)-AOI-1"
+      ]
+    ]
+  },
+  "aoi_match_ranges": {
+    "Suspense_Building-AOI-1": [
+      3519,
+      3661
+    ],
+    "Suspense_Building-AOI-2": [
+      4739,
+      4982
+    ],
+    "Language/Tone-AOI-1": [
+      483,
+      555
+    ],
+    "Language/Tone-AOI-2": [
+      556,
+      620
+    ],
+    "Language/Tone-AOI-3": [
+      1049,
+      1224
+    ],
+    "Language/Tone-AOI-4": [
+      2130,
+      2281
+    ],
+    "Language/Tone-AOI-5": [
+      4833,
+      5002
+    ],
+    "Language/Tone-AOI-6": [
+      5534,
+      5684
+    ],
+    "Intro_+_Main_Hook/Cliffhanger-AOI-1": [
+      32,
+      137
+    ],
+    "Story_Structure_+_Flow-AOI-1": [
+      317,
+      401
+    ],
+    "Story_Structure_+_Flow-AOI-2": [
+      403,
+      482
+    ],
+    "Story_Structure_+_Flow-AOI-3": [
+      1664,
+      1766
+    ],
+    "Story_Structure_+_Flow-AOI-4": [
+      2130,
+      2281
+    ],
+    "Story_Structure_+_Flow-AOI-5": [
+      4833,
+      5002
+    ],
+    "Pacing-AOI-1": [
+      1476,
+      1541
+    ],
+    "Pacing-AOI-2": [
+      3822,
+      4011
+    ],
+    "Pacing-AOI-3": [
+      4833,
+      5002
+    ],
+    "Mini-Hooks_(30–60s)-AOI-1": [
+      1049,
+      1224
+    ],
+    "Mini-Hooks_(30–60s)-AOI-2": [
+      2130,
+      2281
+    ],
+    "Mini-Hooks_(30–60s)-AOI-3": [
+      3519,
+      3661
+    ],
+    "Mini-Hooks_(30–60s)-AOI-4": [
+      3822,
+      4011
+    ],
+    "Mini-Hooks_(30–60s)-AOI-5": [
+      4833,
+      5002
+    ],
+    "Outro_(Ending)-AOI-1": [
+      5698,
+      5944
+    ]
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "run_id": "55a84e0fb7df41928a4cfee7061398ce",
+  "title": "uploaded_script",
+  "created_at": 1756990479,
+  "created_at_human": "2025-09-04 18:24:39",
+  "overall_rating": 6,
+  "scores": {
+    "Suspense Building": 9,
+    "Language/Tone": 8,
+    "Intro + Main Hook/Cliffhanger": 9,
+    "Story Structure + Flow": 4,
+    "Pacing": 8,
+    "Mini-Hooks (30–60s)": 8,
+    "Outro (Ending)": 1
+  },
+  "per_parameter": {
+    "Suspense Building": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Strong opening hooks immediately establish a deep mystery and promise shocking revelations. Consistent use of mini-hooks and delayed reveals keeps the audience engaged and anticipating new information. Specific details (e.g., bullet caliber, male driver, hidden bricks) are used effectively to deepen the mystery rather than resolve it. The script expertly builds towards major reveals, ensuring each new piece of information escalates the tension.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "Detectives were able to identify them as Britney and her longtime girlfriend, Crystal.",
+          "issue": "Factual statement, lacks immediate suspense.",
+          "fix": "Replace with: 'The victims were identified as Britney and her longtime girlfriend, Crystal – a discovery that only deepened the mystery of who would want them dead.'",
+          "why_this_helps": "Adds an immediate question, linking identification to the larger mystery."
+        },
+        {
+          "quote_verbatim": "And as they began scavenging through the crime scene, they discovered some crucial evidence highlighting the gruesome details of the double homicide.",
+          "issue": "Vague phrasing ('gruesome details') lessens impact; could be more specific or tease the *type* of evidence.",
+          "fix": "Sharpen: 'As they scavenged the scene, crucial evidence emerged – not just of the brutal attack, but of a desperate struggle that hinted at a fight for survival.'",
+          "why_this_helps": "Adds specific detail (struggle) and raises stakes, making the evidence more impactful."
+        },
+        {
+          "quote_verbatim": "Ivan told the detectives that the girls had stopped by the Jackson residence to pick up Zaniah and proudly show off the new car they had just purchased together.",
+          "issue": "Pure exposition, no immediate tension or hint of unease.",
+          "fix": "Add a mini-hook: 'Ivan recounted their last known movements – a seemingly innocent visit to pick up Zaniah and show off a new car. But something about that day felt wrong, a detail he couldn't quite place.'",
+          "why_this_helps": "Introduces a subtle sense of unease to an otherwise factual statement, foreshadowing trouble."
+        },
+        {
+          "quote_verbatim": "As the days went by and the investigation dragged on, the detective eventually received the autopsy report for the two girls.",
+          "issue": "Passive phrasing ('dragged on') could imply more active frustration or dead ends.",
+          "fix": "Replace with: 'Days turned into weeks, the investigation stalled, until the autopsy report finally arrived – a document that would either break the case wide open or plunge them deeper into the dark.'",
+          "why_this_helps": "Creates a sense of urgency and higher stakes for the report's arrival, building anticipation."
+        },
+        {
+          "quote_verbatim": "Meanwhile, in the forensic lab, experts worked tirelessly to analyze the evidence collected from the crime scenes.",
+          "issue": "Generic filler, lacks specific tension or urgency.",
+          "fix": "Sharpen: 'Meanwhile, the forensic lab became a race against time, as experts painstakingly analyzed every fiber and print, knowing one tiny detail could crack the case wide open.'",
+          "why_this_helps": "Adds urgency and highlights the high stakes of the forensic work, making it more engaging."
+        },
+        {
+          "quote_verbatim": "However until they recovered the data in her phone they decided to dig deeper into the dynamics of their relationship.",
+          "issue": "Procedural phrasing ('decided to dig deeper') lessens the emotional impact of the delay.",
+          "fix": "Replace with: 'But with the phone data still locked away, detectives were forced to confront the volatile truth of their relationship, hoping to find answers before it was too late.'",
+          "why_this_helps": "Adds a sense of urgency and highlights the emotional stakes of the relationship dynamics, increasing tension."
+        }
+      ],
+      "summary": "Suspense holds steady with clear unanswered questions; only minor polish could make it airtight."
+    },
+    "Language/Tone": {
+      "extractions": [],
+      "score": 8,
+      "explanation": "Strong, consistent voice maintains suspense and respect for victims throughout. Vivid descriptions and precise verbs often elevate the narrative, keeping it gripping. Some reliance on common true crime tropes and slightly formal phrasing occasionally flattens impact.",
+      "weakness": "The script occasionally leans on familiar true crime clichés and slightly clunky constructions, subtly reducing immersion.",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "Investigating the double homicide, detectives had no idea that it was just the beginning of a mystery that would change everything forever.",
+          "issue": "[Minor] Slightly generic phrasing, common true crime setup.",
+          "fix": "Rewrite: 'Detectives investigating the double homicide had no idea this was just the first tremor of an earthquake that would shatter everything.'",
+          "why_this_helps": "Elevates common phrasing, adds stronger imagery and impact."
+        },
+        {
+          "quote_verbatim": "The deranged motive behind this unspeakable act would soon unravel and prove to be the catalyst of a dark and sinister secret.",
+          "issue": "[Moderate] Clunky phrasing; 'catalyst of a secret' is awkward.",
+          "fix": "Rewrite: 'The deranged motive behind this unspeakable act would soon unravel, revealing a dark and sinister secret at its core.'",
+          "why_this_helps": "Streamlines the sentence, clarifies the relationship between motive and secret."
+        },
+        {
+          "quote_verbatim": "And as they began scavenging through the crime scene, they discovered some crucial evidence highlighting the gruesome details of the double homicide.",
+          "issue": "[Minor] 'Scavenging' is an odd verb for detectives; 'highlighting the gruesome details' is generic.",
+          "fix": "Rewrite: 'As they meticulously processed the crime scene, crucial evidence emerged, painting a gruesome picture of the double homicide.'",
+          "why_this_helps": "Uses more precise, professional verb; sharpens the description."
+        },
+        {
+          "quote_verbatim": "However, further details from the report revealed something that turned the case even more twisted, setting the stage for shocking revelations and a trail of new, unexpected leads.",
+          "issue": "[Minor] 'Setting the stage for' is a common cliché.",
+          "fix": "Replace: 'setting the stage for' with 'unleashing' or 'igniting'.",
+          "why_this_helps": "Replaces cliché with more active, impactful verb, increasing tension."
+        },
+        {
+          "quote_verbatim": "Unfortunately, the surveillance camera had been positioned too far away to provide a clear image of the driver’s face, leaving the detectives frustrated yet determined to dig deeper, slowly inching towards uncovering a crucial piece of evid",
+          "issue": "[Moderate] 'Unfortunately' is weak; 'slowly inching towards uncovering' is a cliché.",
+          "fix": "Rewrite: 'The surveillance camera was too distant for a clear image of the driver’s face, leaving detectives frustrated but determined to dig deeper, knowing a crucial piece of evidence lay just out of reach.'",
+          "why_this_helps": "Strengthens opening, replaces cliché with more active and suspenseful phrasing."
+        },
+        {
+          "quote_verbatim": "A chilling pattern was beginning to emerge. One that had been hidden in plain sight all along.",
+          "issue": "[Minor] 'Hidden in plain sight all along' is a very common cliché.",
+          "fix": "Rewrite: 'A chilling pattern was beginning to emerge—a truth obscured by its very obviousness.'",
+          "why_this_helps": "Replaces a cliché with a more unique and thought-provoking phrase."
+        },
+        {
+          "quote_verbatim": "Detectives are about to discover something on her phone would shake them to the core.",
+          "issue": "[Major] Grammatically incorrect and clunky.",
+          "fix": "Rewrite: 'Detectives were about to discover something on her phone that would shake them to the core.'",
+          "why_this_helps": "Corrects grammar, improves flow and impact."
+        },
+        {
+          "quote_verbatim": "In the upcoming visuals, make sure to pay close attention, particularly to the way he was dressed, which strongly showed he was in a manic state.",
+          "issue": "[Major] Direct instruction to the viewer breaks immersion; 'strongly showed' is clunky.",
+          "fix": "Cut the direct instruction. Rephrase: 'His disheveled appearance in the visuals hinted at a manic state.'",
+          "why_this_helps": "Maintains narrative voice, avoids breaking immersion, and uses more subtle phrasing."
+        }
+      ],
+      "summary": "Tone is consistently human and gripping, but could be elevated by replacing common true crime clichés and tightening some clunky phrasing."
+    },
+    "Intro + Main Hook/Cliffhanger": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Immediate introduction of a child witness to a double homicide sets a dark, high-stakes tone from the jump. The escalating teases effectively build anticipation for a deeper, more twisted mystery beyond the initial crime. The main hook, revealing a killer 'hiding in plain sight' based on Zaniah's testimony, is specific, chilling, and highly compelling.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "This is Zaniah, the only witness to the brutal murders of her mothers, Crystal Jackson and Britney Cosby.",
+          "issue": "[Minor] Slightly passive opening; could be more immersive.",
+          "fix": "Rewrite: 'Meet Zaniah, the sole witness to the brutal murders of her mothers, Crystal Jackson and Britney Cosby.' or 'In the wake of the brutal murders of Crystal Jackson and Britney Cosby, only one witness remained: Zaniah.'",
+          "why_this_helps": "Engages the viewer more directly and immediately, setting a more active tone."
+        },
+        {
+          "quote_verbatim": "The deranged motive behind this unspeakable act would soon unravel and prove to be the catalyst of a dark and sinister secret.",
+          "issue": "[Minor] Slightly wordy and generic phrasing; could be punchier.",
+          "fix": "Sharpen: 'The deranged motive behind this unspeakable act would soon unravel, revealing a dark and sinister secret.'",
+          "why_this_helps": "Tightens the language, making the promise of a secret more impactful and less clunky."
+        },
+        {
+          "quote_verbatim": "However, further details from the report revealed something that turned the case even more twisted, setting the stage for shocking revelations and a trail of new, unexpected leads.",
+          "issue": "[Minor] A bit of a 'tell, don't show' moment; could be more specific.",
+          "fix": "Replace 'setting the stage for shocking revelations and a trail of new, unexpected leads' with a more specific tease, e.g., 'revealing a detail that would shatter their understanding of the crime.'",
+          "why_this_helps": "Reduces generic 'tease' language and makes the upcoming twist feel more concrete and immediate."
+        }
+      ],
+      "summary": "The intro immediately grabs attention with a brutal crime and child witness, then builds suspense to a powerful hook about a killer hiding in plain sight. Minor polish only."
+    },
+    "Story Structure + Flow": {
+      "extractions": [],
+      "score": 4,
+      "explanation": "Internal progression within the first case (Britney Cosby) largely follows a logical investigative path. The script suffers from a complete, unannounced narrative break when switching from the first case to the second. Several abrupt jumps within the first case (e.g., new characters, locations, evidence) lack proper signposting, disorienting the viewer.",
+      "weakness": "The script completely fails to transition between two distinct true crime cases, creating a jarring and incoherent overall structure.",
+      "suggestion": "Clearly delineate if these are two separate scripts or two segments of one. If one script, add a strong narrative bridge explaining the connection or a clear segment break with a new intro for the second case.",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "But what they saw in another footage from a different part of the city, left them stunned. Neither Britney nor Crystal was in the driver’s seat.",
+          "issue": "[Moderate] Abrupt jump to new evidence (CCTV) without connecting it to Zaniah's testimony or the previous investigation thread.",
+          "fix": "Rewrite: 'After Zaniah's chilling account, detectives widened their search, hoping for any lead. That's when footage from a different part of the city surfaced, revealing a shocking detail: neither Britney nor Crystal was in the driver’s seat.'",
+          "why_this_helps": "Smooths transition, connects new evidence to the ongoing investigation, and maintains narrative flow."
+        },
+        {
+          "quote_verbatim": "As they reached the carport, Kitchens immediately pulled out his recorder, ready to document whatever Cora had to reveal.",
+          "issue": "[Major] Abrupt introduction of new character (Kitchens) and location (carport/Cora) with no context or connection to the ongoing investigation. Disorients the viewer.",
+          "fix": "Rewrite: 'This new lead pointed them to a specific location, a carport, where Detective Kitchens met with a new witness, Cora, who had a disturbing story to tell.'",
+          "why_this_helps": "Introduces new elements logically, maintains viewer orientation, and explains the shift in focus."
+        },
+        {
+          "quote_verbatim": "Patricia Birmingham\n\nWith the CCTV it was confirmed that Carey was trying to pursue Patricia menacingly but what followed is even more terrifying.",
+          "issue": "[Major] Complete, unannounced switch to a new, unrelated true crime case. Breaks all narrative structure and flow for a single script.",
+          "fix": "Action: If this is a separate story, it needs a clear segment break, title card, and new intro. If it's meant to be connected, a strong narrative bridge explaining the connection is essential.",
+          "why_this_helps": "Establishes clear story boundaries or provides necessary context for a connected narrative, preventing viewer confusion and drop-off."
+        }
+      ],
+      "summary": "The script's overall structure is fundamentally broken by the unannounced switch between two distinct cases, making the flow unusable for a single video.",
+      "suggestions_list": [
+        "Clearly delineate if these are two separate scripts or two segments of one. If one script, add a strong narrative bridge explaining the connection or a clear segment break with a new intro for the second case.",
+        "Within the first case, add explicit signposts and connective tissue when introducing new evidence, characters, or locations (e.g., 'This new information led detectives to...' or 'Meanwhile, a different team was pursuing...')."
+      ]
+    },
+    "Pacing": {
+      "extractions": [],
+      "score": 8,
+      "explanation": "Pacing is largely strong, driven by consistent mini-hooks that propel the narrative forward. Reveals are well-timed, creating new questions and maintaining curiosity without feeling rushed or delayed. Transitions between different investigative threads and character introductions are smooth, preventing significant drag. The final line, however, is a jarring instructional note that breaks the story's rhythm and immersion.",
+      "weakness": "The script concludes with a direct instruction to the viewer, which abruptly shatters narrative immersion and pacing.",
+      "suggestion": "Cut the final instructional line; integrate visual cues into the narrative or rely on the visuals themselves.",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "As the days went by and the investigation dragged on, the detective eventually received the autopsy report for the two girls.",
+          "issue": "[Minor] Generic phrasing 'investigation dragged on' slightly dulls momentum.",
+          "fix": "Replace: 'Days turned into weeks, but the breakthrough came with the autopsy report for the two girls.'",
+          "why_this_helps": "More active phrasing maintains urgency and avoids a flat spot."
+        },
+        {
+          "quote_verbatim": "leaving the detectives frustrated yet determined to dig deeper, slowly inching towards uncovering a crucial piece of evidence.",
+          "issue": "[Minor] Slightly generic and passive phrasing; could be more active.",
+          "fix": "Sharpen: 'leaving detectives frustrated but fueling their determination to unearth the crucial evidence they knew was hidden.'",
+          "why_this_helps": "More active language maintains tension and urgency, avoiding a slight dip."
+        },
+        {
+          "quote_verbatim": "Meanwhile, in the forensic lab, experts worked tirelessly to analyze the evidence collected from the crime scenes.",
+          "issue": "[Minor] Generic transition; lacks immediate tension or specific detail.",
+          "fix": "Replace: 'While detectives hit a wall, the forensic lab was quietly piecing together a different story from the crime scenes.'",
+          "why_this_helps": "Creates a more active contrast and hints at a separate, unfolding discovery, maintaining engagement."
+        },
+        {
+          "quote_verbatim": "In the upcoming visuals, make sure to pay close attention, particularly to the way he was dressed, which strongly showed he was in a manic state.",
+          "issue": "[Major] Direct instruction to the viewer; completely breaks narrative flow and immersion.",
+          "fix": "Cut this line entirely. If visual cues are needed, integrate them into the narrative voiceover or rely on the visuals themselves.",
+          "why_this_helps": "Removes a jarring, non-narrative instruction that kills the story's momentum and emotional impact at the end."
+        }
+      ],
+      "summary": "Pacing is very strong throughout most of the script, but the final instructional line creates a significant, jarring break in the narrative flow.",
+      "suggestions_list": [
+        "Cut the final instructional line; integrate visual cues into the narrative or rely on the visuals themselves.",
+        "Review generic phrases like 'investigation dragged on' for more active and engaging alternatives."
+      ]
+    },
+    "Mini-Hooks (30–60s)": {
+      "extractions": [],
+      "score": 8,
+      "explanation": "Mini-hooks are generally well-spaced, appearing roughly every 30-60 seconds, maintaining a good pace. Many hooks are specific and concrete, introducing new evidence or direct questions that effectively escalate the mystery. The script uses strong reveals like the higher caliber bullet and the mystery driver to refresh curiosity and deepen the plot.",
+      "weakness": "A few mini-hooks rely on generic phrasing, promising 'secrets' or 'crucial evidence' without enough specific detail to maximize impact.",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "discovered some crucial evidence highlighting the gruesome details of the double homicide.",
+          "issue": "[Minor] Generic phrasing; doesn't create a specific question or twist.",
+          "fix": "Replace with: 'discovered evidence that didn't just detail the horror, but hinted at a motive far more twisted.'",
+          "why_this_helps": "Elevates a generic statement into a specific tease about motive, increasing curiosity."
+        },
+        {
+          "quote_verbatim": "But things didn’t quite go as Crystal had imagined.",
+          "issue": "[Minor] Vague tease; lacks specificity to truly hook the viewer.",
+          "fix": "Replace with: 'But their celebratory drive would soon turn into a nightmare no one could have predicted.'",
+          "why_this_helps": "Creates a more immediate sense of dread and foreshadows the coming tragedy more directly."
+        },
+        {
+          "quote_verbatim": "leaving the detectives frustrated yet determined to dig deeper, slowly inching towards uncovering a crucial piece of evidence.",
+          "issue": "[Minor] Generic recap; doesn't add a new question or specific escalation.",
+          "fix": "Replace with: 'leaving detectives with a chilling question: who was this mystery driver, and where were Britney and Crystal really headed?'",
+          "why_this_helps": "Transforms a bland summary into a direct, specific question that drives the narrative forward."
+        },
+        {
+          "quote_verbatim": "What she said next hinted at a secret far darker than anyone was prepared for.",
+          "issue": "[Minor] Vague tease; promises a secret but lacks concrete detail.",
+          "fix": "Replace with: 'What she said next didn't just hint at a secret, it painted a picture of betrayal that would shock them to their core.'",
+          "why_this_helps": "Adds a specific emotional element (betrayal) to the tease, making it more impactful and less generic."
+        }
+      ],
+      "summary": "Mini-hooks are consistently present and often specific, effectively driving curiosity. Sharpening a few vague teases would push this into near-flawless territory."
+    },
+    "Outro (Ending)": {
+      "extractions": [],
+      "score": 1,
+      "explanation": "No actual outro is present in the provided script. The text ends on a forward-looking tease, not a resolution or emotional echo. This section is fundamentally incomplete, lacking any concluding remarks or a final image.",
+      "weakness": "The complete absence of an outro, leaving the story without a proper conclusion.",
+      "suggestion": "Add a dedicated outro section that provides resolution or a lingering emotional image for the story.",
+      "areas_of_improvement": [],
+      "summary": "The script completely lacks an outro, ending abruptly on a forward-looking tease instead of a resonant conclusion, making it unusable as is.",
+      "suggestions_list": [
+        "Add a dedicated outro section that provides resolution or a lingering emotional image for the story.",
+        "Ensure any calls to action (CTAs) are placed *after* the emotional close, not before or in place of it."
+      ]
+    }
+  },
+  "strengths": [
+    "Immediate, high-stakes hook with a child witness to a double homicide.",
+    "Consistent suspense building through mini-hooks and delayed reveals.",
+    "Specific details (bullet caliber, male driver, hidden bricks) effectively deepen the mystery.",
+    "Strong, consistent narrative voice maintains respect and engagement.",
+    "Mini-hooks are generally well-spaced and often specific, driving curiosity."
+  ],
+  "weaknesses": [
+    "Major structural flaw: Abrupt, unannounced switch between two completely distinct true crime cases, making the script incoherent.",
+    "Complete absence of an outro, leaving the story without a proper conclusion or emotional echo.",
+    "Abrupt jumps to new evidence, characters, or locations within the first case lack proper context and signposting.",
+    "The script occasionally leans on familiar true crime clichés and clunky phrasing.",
+    "A jarring instructional note at the end breaks narrative immersion and pacing.",
+    "Some mini-hooks rely on generic phrasing, promising 'secrets' or 'crucial evidence' without enough specific detail."
+  ],
+  "suggestions": [
+    "Address the structural break: Clearly delineate if these are two separate scripts or two segments of one. If one script, add a strong narrative bridge explaining the connection or a clear segment break with a new intro for the second case.",
+    "Add a dedicated outro section that provides resolution or a lingering emotional image for the story. Ensure any calls to action (CTAs) are placed *after* the emotional close.",
+    "Within the first case, add explicit signposts and connective tissue when introducing new evidence, characters, or locations (e.g., 'This new information led detectives to...' or 'Meanwhile, a different team was pursuing...').",
+    "Cut the final instructional line; integrate visual cues into the narrative or rely on the visuals themselves.",
+    "Review and replace generic true crime clichés and clunky phrasing with more active, impactful, and unique language.",
+    "Sharpen vague mini-hooks by adding specific details or direct questions to maximize impact."
+  ],
+  "drop_off_risks": [
+    "~00:00 (Start of 'Patricia Birmingham' section): The abrupt, unannounced switch to a completely new, unrelated true crime case will cause immediate viewer confusion and drop-off. Fix: Either separate into two distinct scripts or create a strong narrative bridge explaining the connection.",
+    "~00:00 (Introduction of Kitchens/Cora): Abrupt introduction of new characters and locations without context will disorient viewers. Fix: Add connective tissue explaining how this new lead emerged and its relevance to the ongoing investigation.",
+    "End of script: The jarring instructional note to the viewer breaks immersion and leaves the story feeling incomplete, likely causing viewers to click away. Fix: Cut this line entirely and provide a proper outro."
+  ],
+  "viral_quotient": "The script features a strong initial hook and generally consistent mini-hooks, which are good for retention. However, the fundamentally broken structure and the complete lack of an outro severely undermine its viral potential, as viewers will likely drop off due to confusion and an unsatisfying conclusion.",
+  "script_text": "FOR VO INSTRUCTION : THE HIGHLIGHTED PARTS NEED TO BE EMPHASISED BUT DOES NOT LOOK FORCED \n\n\nBritney Cosby\n\nThis is Zaniah, the only witness to the brutal murders of her mothers, Crystal Jackson and Britney Cosby. Investigating the double homicide, detectives had no idea that it was just the beginning of a mystery that would change everything forever.\n\nThe deranged motive behind this unspeakable act would soon unravel and prove to be the catalyst of a dark and sinister secret.\n\n\n===================\n\nDetectives were able to identify them as Britney and her longtime girlfriend, Crystal. It was evident that both Britney and Crystal’s final moments had been deeply traumatizing. And as they began scavenging through the crime scene, they discovered some crucial evidence highlighting the gruesome details of the double homicide.\n\nIvan told the detectives that the girls had stopped by the Jackson residence to pick up Zaniah and proudly show off the new car they had just purchased together. But things didn’t quite go as Crystal had imagined. \n\nAs the days went by and the investigation dragged on, the detective eventually received the autopsy report for the two girls. It confirmed that Crystal had been killed by a gunshot wound, while Britney had died as a result of blunt force trauma. \nThe detectives were still considering Ivan as a potential suspect. However, further details from the report revealed something that turned the case even more twisted, setting the stage for shocking revelations and a trail of new, unexpected leads.\n\nThe bullet that struck Crystal was from a firearm of a higher caliber than Ivan’s own gun.\nAnd in the effort to completely clear his name, Ivan consented to let them question Zaniah, who had been with Britney and Crystal on the day they disappeared.\nWithout delay, an officer escorted the young girl into a separate room. And once the detectives learned about the horrors Zaniah had witnessed, they were left stunned—realizing she might be holding the missing piece to a nightmare no one saw coming.\n\nAnd when she told the detectives what she had heard that morning, they were rattled to the core, because her words pointed to a potential killer who could be hiding in plain sight.\n\nBut what they saw in another footage from a different part of the city, left them stunned. Neither Britney nor Crystal was in the driver’s seat. Instead, the individual behind the wheel was clearly someone else. Based on the person’s height and build, it was evident they were male. Unfortunately, the surveillance camera had been positioned too far away to provide a clear image of the driver’s face, leaving the detectives frustrated yet determined to dig deeper, slowly inching towards uncovering a crucial piece of evidence.\n\nAs they reached the carport, Kitchens immediately pulled out his recorder, ready to document whatever Cora had to reveal. What she said next hinted at a secret far darker than anyone was prepared for.\n\n\nIntrigued, Kitchens began carefully surveying the carport, initially seeing nothing out of place. However, as his eyes scanned the area more closely, he spotted a small pile of bricks on the concrete floor. And tucked beneath them was a detail so subtle, yet so sinister that it would change the course of the investigation forever.\n\nMeanwhile, in the forensic lab, experts worked tirelessly to analyze the evidence collected from the crime scenes.\n\nIt was during one of these moments that something finally clicked for the detectives. A chilling pattern was beginning to emerge. One that had been hidden in plain sight all along.\n\n\n\n\nPatricia Birmingham\n\nWith the CCTV it was confirmed that Carey was trying to pursue Patricia menacingly but what followed is even more terrifying. Detectives are about to discover something on her phone would shake them to the core.\n\nHowever until they recovered the data in her phone they decided to dig deeper into the dynamics of their relationship.\n\nWith this, the detective’s earlier suspicions were confirmed that Carey had been deliberately trying to harm Patricia. But one question still remained: why would he want to kill his own wife? The answer was coming and it would be far more terrifying than anyone expected. It was a horrifying truth, all captured live on camera by Patricia herself.\n\nIn the upcoming visuals, make sure to pay close attention, particularly to the way he was dressed, which strongly showed he was in a manic state. \n\n",
+  "source_docx_path": "C:\\Users\\pc\\AppData\\Local\\Temp\\tmp92hjcttq.docx",
+  "aoi_match_ranges": {
+    "Suspense_Building-AOI-1": [
+      505,
+      591
+    ],
+    "Suspense_Building-AOI-2": [
+      683,
+      832
+    ],
+    "Suspense_Building-AOI-3": [
+      834,
+      995
+    ],
+    "Suspense_Building-AOI-4": [
+      1050,
+      1175
+    ],
+    "Suspense_Building-AOI-5": [
+      3296,
+      3410
+    ],
+    "Suspense_Building-AOI-6": [
+      3831,
+      3949
+    ],
+    "Language/Tone-AOI-1": [
+      214,
+      353
+    ],
+    "Language/Tone-AOI-2": [
+      355,
+      481
+    ],
+    "Language/Tone-AOI-3": [
+      683,
+      832
+    ],
+    "Language/Tone-AOI-4": [
+      1364,
+      1544
+    ],
+    "Language/Tone-AOI-5": [
+      2512,
+      2756
+    ],
+    "Language/Tone-AOI-6": [
+      3498,
+      3592
+    ],
+    "Language/Tone-AOI-7": [
+      3744,
+      3829
+    ],
+    "Language/Tone-AOI-8": [
+      4300,
+      4445
+    ],
+    "Intro_+_Main_Hook/Cliffhanger-AOI-1": [
+      108,
+      213
+    ],
+    "Intro_+_Main_Hook/Cliffhanger-AOI-2": [
+      355,
+      481
+    ],
+    "Intro_+_Main_Hook/Cliffhanger-AOI-3": [
+      1364,
+      1544
+    ],
+    "Story_Structure_+_Flow-AOI-1": [
+      2229,
+      2373
+    ],
+    "Story_Structure_+_Flow-AOI-2": [
+      2759,
+      2880
+    ],
+    "Story_Structure_+_Flow-AOI-3": [
+      3597,
+      3743
+    ],
+    "Pacing-AOI-1": [
+      1050,
+      1175
+    ],
+    "Pacing-AOI-2": [
+      2631,
+      2757
+    ],
+    "Pacing-AOI-3": [
+      3296,
+      3410
+    ],
+    "Pacing-AOI-4": [
+      4300,
+      4445
+    ],
+    "Mini-Hooks_(30–60s)-AOI-1": [
+      742,
+      832
+    ],
+    "Mini-Hooks_(30–60s)-AOI-2": [
+      996,
+      1047
+    ],
+    "Mini-Hooks_(30–60s)-AOI-3": [
+      2631,
+      2757
+    ],
+    "Mini-Hooks_(30–60s)-AOI-4": [
+      2881,
+      2959
+    ]
+  }
+}

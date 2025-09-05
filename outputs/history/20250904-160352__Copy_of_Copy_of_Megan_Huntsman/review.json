@@ -1,0 +1,341 @@
+{
+  "scores": {
+    "Suspense Building": 8,
+    "Language/Tone": 9,
+    "Intro + Main Hook/Cliffhanger": 9,
+    "Story Structure + Flow": 9,
+    "Pacing": 9,
+    "Mini-Hooks (30–60s)": 7,
+    "Outro (Ending)": 3
+  },
+  "per_parameter": {
+    "Suspense Building": {
+      "extractions": [],
+      "score": 8,
+      "explanation": "Strong opening hook immediately establishes high stakes and an escalating mystery. Effective use of mini-hooks and timed reveals keeps the audience engaged and anticipating the next horror. The progressive discovery of multiple bodies creates a powerful, sustained sense of dread.",
+      "weakness": "The resolution of Darren's potential involvement at the end feels too definitive, prematurely closing a line of suspense.",
+      "suggestion": "Reframe the conclusion of Darren's interrogation to leave a lingering question about his true awareness or complicity, even if not directly involved in the murders.",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "So, for the time being, the officers focused on Megan to understand about the unfolding events.",
+          "issue": "[Minor] Flat transition, lacks a specific hook or question to propel the narrative.",
+          "fix": "Replace with: 'With Darren's shocking call, all eyes turned to Megan—the only one who could unravel this horrifying secret.'",
+          "why_this_helps": "Sharpens the focus and creates a direct, suspenseful pivot to Megan."
+        },
+        {
+          "quote_verbatim": "Despite appearing visibly upset, there were many details in Megan’s account that just didn't add up.",
+          "issue": "[Minor] Vague phrasing; could be more specific to build immediate doubt and tension.",
+          "fix": "Sharpen with: 'But even through her tears, the detective sensed a chilling inconsistency—a detail that screamed of a deeper, darker truth.'",
+          "why_this_helps": "Adds specificity and immediate suspicion, making the audience question Megan's story more actively."
+        },
+        {
+          "quote_verbatim": "Although Darren seemed like a potential suspect in the case, there was no evidence to link him to the murders. Eventually, Darren requested an attorney, bringing the interrogation to an abrupt end. What worked in his favor was a simple but",
+          "issue": "[Moderate] Resolves Darren's suspicion too cleanly, removing lingering doubt and a potential source of suspense.",
+          "fix": "Rephrase to maintain ambiguity: 'While no direct evidence linked Darren to the murders, the detective couldn't shake the feeling that he knew more than he let on. His sudden request for an attorney only deepened the mystery, leaving a chilling question mark over his true knowledge.'",
+          "why_this_helps": "Sustains the suspense around Darren's potential involvement, keeping the audience guessing rather than providing a definitive answer."
+        }
+      ],
+      "summary": "Suspense is consistently strong throughout, driven by escalating discoveries and well-placed questions, though the final resolution of Darren's role could be more ambiguous.",
+      "suggestions_list": [
+        "Reframe the conclusion of Darren's interrogation to leave a lingering question about his true awareness or complicity, even if not directly involved in the murders."
+      ]
+    },
+    "Language/Tone": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Tone is consistently serious and respectful, fitting the gravity of the case without resorting to sensationalism. Descriptions are vivid and impactful, maintaining a human narrative voice that draws the viewer in. Victims are handled with appropriate solemnity, focusing on the horror of the discovery rather than graphic details.",
+      "weakness": "Occasional reliance on common true crime clichés slightly dulls the narrative edge in a few spots.",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "But that was nothing compared to what chilling discovery the officers were about to make.",
+          "issue": "[Minor] 'Chilling discovery' is a common, slightly generic phrase.",
+          "fix": "Rewrite: 'But that was nothing compared to the horror officers were about to uncover.'",
+          "why_this_helps": "Sharper, more direct phrasing enhances impact and avoids cliché."
+        },
+        {
+          "quote_verbatim": "But as they began uncovering a series of damning clues, it quickly became clear that this wasn’t just a meticulously planned murder—it was something far more sinister and the killer was much closer to home than anyone expected.",
+          "issue": "[Minor] 'Much closer to home than anyone expected' is a common true crime cliché.",
+          "fix": "Rewrite: 'But as they began uncovering a series of damning clues, it quickly became clear this wasn't just a meticulously planned murder—it was something far more sinister, and the killer was shockingly close.'",
+          "why_this_helps": "Avoids cliché, making the reveal feel more impactful and less predictable."
+        },
+        {
+          "quote_verbatim": "So, for the time being, the officers focused on Megan to understand about the unfolding events.",
+          "issue": "[Minor] 'Understand about the unfolding events' is a bit clunky and passive.",
+          "fix": "Rewrite: 'So, for the time being, officers focused on Megan to understand the unfolding horror.'",
+          "why_this_helps": "More active and concise phrasing, sharpening the narrative flow."
+        },
+        {
+          "quote_verbatim": "What struck as odd was Megan’s fear of going to jail if the baby was truly a stillborn.",
+          "issue": "[Minor] 'What struck as odd' is slightly informal and clunky.",
+          "fix": "Rewrite: 'What struck detectives as odd was Megan’s fear of jail if the baby was truly stillborn.'",
+          "why_this_helps": "More professional and smoother phrasing, fitting the investigative tone."
+        },
+        {
+          "quote_verbatim": "Inside, they uncovered a deeply disturbing scene— that was just the start.",
+          "issue": "[Minor] 'Deeply disturbing scene' is generic, and 'that was just the start' is a common mini-hook.",
+          "fix": "Rewrite: 'Inside, they uncovered a scene that would only deepen the horror.'",
+          "why_this_helps": "More specific and less cliché, building tension more effectively."
+        },
+        {
+          "quote_verbatim": "These addictions had ruined her ability to make rational decisions, but they were no excuse for taking a life.",
+          "issue": "[Minor] 'No excuse for taking a life' feels slightly judgmental, breaking objective narration.",
+          "fix": "Rewrite: 'These addictions had ruined her ability to make rational decisions, but they offered no explanation for the horror that unfolded.'",
+          "why_this_helps": "Maintains objective, investigative tone while still conveying the gravity of the situation."
+        },
+        {
+          "quote_verbatim": "It was painfully evident that this case was far from straightforward.",
+          "issue": "[Minor] 'Far from straightforward' is a common, slightly generic phrase.",
+          "fix": "Rewrite: 'It was painfully evident this case was anything but straightforward.'",
+          "why_this_helps": "More concise and slightly fresher phrasing."
+        },
+        {
+          "quote_verbatim": "However, the case was far from complete—still there were pieces of the puzzle that didn’t quite fit and to fill in the gaps, investigators brought Darren in for questioning.",
+          "issue": "[Minor] 'Far from complete' and 'pieces of the puzzle that didn’t quite fit' are clichés.",
+          "fix": "Rewrite: 'However, the case was far from over—gaps remained, and to fill them, investigators brought Darren in for questioning.'",
+          "why_this_helps": "Avoids multiple clichés, making the narrative more direct and engaging."
+        },
+        {
+          "quote_verbatim": "Darren in question",
+          "issue": "[Minor] Heading is clunky and not a natural narrative phrase.",
+          "fix": "Replace with: 'Darren Under Scrutiny' or 'Darren's Account'.",
+          "why_this_helps": "More engaging and less procedural, improving the flow of the script."
+        }
+      ],
+      "summary": "Tone is strong, human, and respectful, with only minor cliché usage that can be polished for an even sharper narrative."
+    },
+    "Intro + Main Hook/Cliffhanger": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "The opening line immediately drops the audience into a high-stakes discovery, sparking instant curiosity. Tone is set quickly with phrases like 'gruesome scene' and 'far more sinister,' building strong suspense. The script masterfully escalates the initial hook (one body) into the main, chilling cliffhanger of multiple bodies, keeping viewers locked in. The pacing is excellent, moving from initial discovery to the first major twist within the first minute.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "make this disturbing 911 call.",
+          "issue": "[Minor] Generic phrasing; lacks specific impact.",
+          "fix": "Replace: 'make this chilling 911 call, his voice trembling with horror.'",
+          "why_this_helps": "Adds specific emotional detail, making the call more vivid and impactful."
+        },
+        {
+          "quote_verbatim": "Just one look at him, and the officers knew they were in for something dreadful.",
+          "issue": "[Minor] Vague description; doesn't show, only tells.",
+          "fix": "Sharpen: 'Just one look at his ashen face and frantic eyes, and the officers knew they were in for something dreadful.'",
+          "why_this_helps": "Provides concrete visual details, enhancing the sense of dread and urgency."
+        },
+        {
+          "quote_verbatim": "So, for the time being, the officers focused on Megan to understand about the unfolding events.",
+          "issue": "[Minor] Clunky phrasing; 'understand about' is awkward.",
+          "fix": "Rewrite: 'So, for the time being, officers focused on Megan to understand the unfolding events.'",
+          "why_this_helps": "Improves flow and conciseness, making the narration smoother."
+        },
+        {
+          "quote_verbatim": "the story took a turn more twisted than ever.",
+          "issue": "[Minor] Overused, generic phrase; doesn't convey specific escalation.",
+          "fix": "Replace: 'the story took a turn no one could have predicted.'",
+          "why_this_helps": "Creates a stronger sense of unexpected revelation without relying on cliché."
+        },
+        {
+          "quote_verbatim": "many details in Megan’s account that just didn't add up.",
+          "issue": "[Minor] Generic and slightly informal phrasing for a serious investigation.",
+          "fix": "Replace: 'many details in Megan’s account raised immediate red flags.'",
+          "why_this_helps": "Uses stronger, more professional language that fits the investigative tone."
+        }
+      ],
+      "summary": "The intro is exceptionally strong, immediately hooking the audience with a shocking discovery and expertly escalating the mystery to a chilling main cliffhanger."
+    },
+    "Story Structure + Flow": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Act turns are clear, moving logically from initial discovery to Megan's interrogation, then the shocking reveal, and finally Darren's questioning. Transitions generally use effective signposts like 'Meanwhile' or clear cause-and-effect statements, keeping the viewer oriented. The narrative maintains strong forward momentum, building suspense with each new discovery and question, avoiding significant stalls.",
+      "weakness": "The major reveal of Megan's confession about multiple bodies is slightly softened by pre-contextualization, rather than being delivered as a direct, shocking response.",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "This is Darren West who had just found a dead body hidden in his garage. But that was nothing compared to what chilling discovery the officers were about to make.",
+          "issue": "[Minor] Slightly clunky opening sentence, generic tease.",
+          "fix": "Rewrite: 'Meet Darren West. He'd just found a dead body in his garage. But that was only the beginning of the chilling discovery officers were about to make.'",
+          "why_this_helps": "Sharper, more active opening improves immediate engagement."
+        },
+        {
+          "quote_verbatim": "When officers first arrived at the gruesome scene, they had no idea what dark secrets were hidden behind the doors. But as they began uncovering a series of damning clues, it quickly became clear that this wasn’t just a meticulously planned",
+          "issue": "[Minor] 'Meticulously planned murder' feels slightly misaligned with the immediate context of a hidden body.",
+          "fix": "Replace: 'But as they began uncovering a series of damning clues, it quickly became clear that this wasn’t just a hidden body—it was something far more sinister, and the killer was much closer to home than anyone expected.'",
+          "why_this_helps": "More accurately reflects the initial discovery and avoids a potential misdirection."
+        },
+        {
+          "quote_verbatim": "On April 12, 2014 Darren had returned home after serving time in prison for drug charges only to stumble upon a horrifying scene in his garage and make this disturbing 911 call.",
+          "issue": "[Minor] Long, slightly convoluted sentence.",
+          "fix": "Rewrite: 'On April 12, 2014, Darren West returned home after serving time for drug charges. What he stumbled upon in his garage led to a disturbing 911 call.'",
+          "why_this_helps": "Improves readability and impact, making the setup punchier."
+        },
+        {
+          "quote_verbatim": "Just one look at him, and the officers knew they were in for something dreadful.",
+          "issue": "[Minor] Generic description, lacks specific detail.",
+          "fix": "Add detail: 'Just one look at his ashen face, and the officers knew they were in for something dreadful.'",
+          "why_this_helps": "Adds visual detail and strengthens the sense of dread."
+        },
+        {
+          "quote_verbatim": "The box in question was an ordinary-looking fruit box, sitting just outside the garage and its exterior was tightly sealed with electrical tape.",
+          "issue": "[Minor] Slightly formal phrasing.",
+          "fix": "Replace: 'It was an ordinary-looking fruit box, sitting just outside the garage, tightly sealed with electrical tape.'",
+          "why_this_helps": "More direct and natural narration."
+        },
+        {
+          "quote_verbatim": "So, for the time being, the officers focused on Megan to understand about the unfolding events.",
+          "issue": "[Minor] Awkward phrasing.",
+          "fix": "Rewrite: 'So, for the time being, officers focused on Megan to understand the unfolding events.'",
+          "why_this_helps": "Improves flow and conciseness."
+        },
+        {
+          "quote_verbatim": "Megan had a long history of drug abuse, particularly methamphetamine, and was known to drink heavily as well. These addictions had ruined her ability to make rational decisions, but they were no excuse for taking a life. Despite her claims,",
+          "issue": "[Moderate] The narrative jumps to Megan's background and a general statement about her hiding something, *before* explicitly stating her 'response' to being confronted about more bodies. This slightly blunts the impact of the reveal.",
+          "fix": "Reorder/Clarify: After 'nothing could have prepared him for her response,' explicitly state her confession/admission, *then* provide the context of her drug abuse as a potential explanation/mitigation. E.g., 'Nothing could have prepared him for her response: she admitted there were more. Megan had a long history of drug abuse...'",
+          "why_this_helps": "Delivers the shocking reveal directly from Megan, then provides context, maximizing impact and clarity."
+        }
+      ],
+      "summary": "The story's structure is solid and the flow is mostly clear, with only minor bumps. A few sharper transitions and direct reveals would lock it in as near-flawless."
+    },
+    "Pacing": {
+      "extractions": [],
+      "score": 9,
+      "explanation": "Pacing maintains strong forward momentum, consistently pushing the narrative with new information and escalating stakes. Reveals are generally well-timed, creating continuous curiosity and avoiding premature spoilers. The script effectively alternates between active discovery scenes and interrogation, preventing any single section from dragging. Parallel storytelling, like cutting from Megan's questioning to the garage search, keeps tension high and the story moving.",
+      "weakness": "Not present",
+      "suggestion": "Not present",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "The house had once belonged to Darren’s mother, and before he went to prison, he had lived there with his wife, Megan Huntsman, and their three daughters. But now, the place was a chaotic mess with piles of boxes scattered everywhere.",
+          "issue": "[Minor] Background exposition slightly slows the immediate discovery sequence.",
+          "fix": "Condense and reframe: 'The house, once home to Darren, his wife Megan, and their three daughters, was now a chaotic mess of boxes. But one box, in particular, drew the officers' immediate attention.'",
+          "why_this_helps": "Keeps the focus on the unfolding crime scene, maintaining initial tension and accelerating the discovery."
+        },
+        {
+          "quote_verbatim": "So, for the time being, the officers focused on Megan to understand about the unfolding events.",
+          "issue": "[Minor] Generic transition, lacks urgency and active voice.",
+          "fix": "Replace: 'With Darren's shocking claim, officers immediately turned their focus to Megan, hoping she held the key to this unfolding horror.'",
+          "why_this_helps": "Uses more active language, maintaining the narrative's forward drive and suspense."
+        },
+        {
+          "quote_verbatim": "Megan had a long history of drug abuse, particularly methamphetamine, and was known to drink heavily as well. These addictions had ruined her ability to make rational decisions, but they were no excuse for taking a life. Despite her claims,",
+          "issue": "[Moderate] Background on addiction delays the major reveal of multiple bodies, creating a slight dip in tension after a strong mini-hook.",
+          "fix": "Reorder/Condense: Move addiction context to after the full confession, or immediately follow the 'truth so gruesome' with the reveal of multiple bodies. E.g., 'Despite her claims, it was clear she was still hiding something—a truth so gruesome, it would shake everyone to the core. And then, she confessed: there wasn't just one baby...'",
+          "why_this_helps": "Ensures the major revelation lands with maximum impact, avoiding a narrative pause and maintaining escalating tension."
+        },
+        {
+          "quote_verbatim": "Although Darren seemed like a potential suspect in the case, there was no evidence to link him to the murders. Eventually, Darren requested an attorney, bringing the interrogation to an abrupt end. What worked in his favor was a simple but",
+          "issue": "[Minor] The quick, definitive resolution of Darren's suspicion feels a bit rushed, stating a conclusion rather than letting the viewer infer or maintaining a hint of doubt.",
+          "fix": "Rephrase the conclusion: 'While Darren seemed a potential suspect, no evidence linked him to the murders. He eventually requested an attorney, ending the interrogation. But one detail stood out: would a man who knew about six hidden bodies really start cleaning the garage immediately after prison?'",
+          "why_this_helps": "Maintains viewer engagement by posing a rhetorical question, allowing for more thought rather than a blunt statement of fact, and avoids an abrupt end to the segment."
+        }
+      ],
+      "summary": "Pacing stays strong and forward-moving overall; only minor polish needed to hit a clean 9/10."
+    },
+    "Mini-Hooks (30–60s)": {
+      "extractions": [],
+      "score": 7,
+      "explanation": "Mini-hooks are present at a generally consistent cadence, preventing long flat spots. Several hooks are specific and effectively escalate the mystery, like the questions about Megan's whereabouts and Darren's unknown child. However, a number of mini-hooks rely on vague phrasing, diluting their impact and failing to sharpen curiosity. There are missed opportunities to insert stronger, more immediate questions after key reveals.",
+      "weakness": "Too many mini-hooks are vague or generic, failing to provide specific, escalating questions that truly grip the audience.",
+      "suggestion": "Sharpen vague teases into concrete questions or specific hints of new information.",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "Just one look at him, and the officers knew they were in for something dreadful.",
+          "issue": "[Minor] Vague phrasing; 'dreadful' is generic and doesn't escalate specific mystery.",
+          "fix": "Replace: 'Just one look at him, and officers sensed a deeper, more disturbing horror was about to unfold.'",
+          "why_this_helps": "Sharper language hints at specific, hidden horror, increasing immediate curiosity and stakes."
+        },
+        {
+          "quote_verbatim": "The officers quickly sealed off the scene, unsure of what had truly happened, but one thing was clear—it was now a homicide investigation. They began searching the area, moving from box to box,",
+          "issue": "[Moderate] Procedural recap after a major reveal; misses opportunity for immediate next question.",
+          "fix": "Add after 'homicide investigation': 'But the chilling question remained: was this an isolated horror, or just the first discovery?'",
+          "why_this_helps": "Immediately poses the next critical question, preventing a lull after the initial shock and driving the narrative forward."
+        },
+        {
+          "quote_verbatim": "However, in a few moments, the story took a turn more twisted than ever.",
+          "issue": "[Minor] Generic tease; 'twisted' is overused and vague.",
+          "fix": "Replace: 'But the next revelation would shatter their understanding of the case entirely.'",
+          "why_this_helps": "Creates stronger anticipation by promising a fundamental shift in the narrative, not just a generic twist."
+        },
+        {
+          "quote_verbatim": "Despite appearing visibly upset, there were many details in Megan’s account that just didn't add up.",
+          "issue": "[Minor] Vague; 'didn't add up' is generic and lacks punch.",
+          "fix": "Replace: 'Despite her tears, specific inconsistencies in Megan's story began to surface, hinting at a deeper deception.'",
+          "why_this_helps": "More specific language raises concrete doubt and teases a hidden truth, making the audience more invested."
+        },
+        {
+          "quote_verbatim": "But the more the detective spoke with her, the more their doubts grew.",
+          "issue": "[Minor] Repetitive and vague; echoes previous point without new escalation.",
+          "fix": "Replace: 'Each answer from Megan only seemed to deepen the detective's suspicion, revealing more cracks in her carefully constructed facade.'",
+          "why_this_helps": "Escalates the detective's internal conflict and implies a deliberate cover-up, not just confusion, increasing tension."
+        },
+        {
+          "quote_verbatim": "a chilling realisation began to take shape.",
+          "issue": "[Minor] Vague and passive; doesn't specify the 'realisation' or its impact.",
+          "fix": "Replace: 'A horrifying truth was slowly becoming undeniable: this wasn't a single tragedy, but a pattern of unspeakable acts.'",
+          "why_this_helps": "Makes the 'realisation' concrete and escalates the stakes dramatically, hinting at the scale of the crime."
+        }
+      ],
+      "summary": "Mini-hooks are present and generally well-paced, but several instances of vague phrasing prevent them from consistently escalating the mystery and maximizing audience retention.",
+      "suggestions_list": [
+        "Sharpen vague teases into concrete questions or specific hints of new information.",
+        "Insert immediate, unresolved questions after major reveals to maintain momentum and curiosity.",
+        "Review sections where the narrative shifts or new evidence is introduced, ensuring a clear mini-hook guides the audience to the next beat."
+      ]
+    },
+    "Outro (Ending)": {
+      "extractions": [],
+      "score": 3,
+      "explanation": "Script abruptly stops mid-narrative, completely lacking an actual outro for the overall case. The final lines provide a clear, logical reason for Darren's lack of involvement, offering a mini-resolution to his interrogation. No emotional echo or final lingering image is provided for the entire case, leaving viewers hanging.",
+      "weakness": "The script entirely omits a proper outro for the overall case, leaving the narrative unresolved and without emotional closure.",
+      "suggestion": "Add a dedicated outro section that summarizes the case's resolution (or lack thereof) for Megan Huntsman and the victims.",
+      "areas_of_improvement": [
+        {
+          "quote_verbatim": "What worked in his favor was a simple but strong point—if he had known about the bodies in the garage, it was unlikely he would have started cleaning it so soon after his release from prison.",
+          "issue": "[Major] Script ends abruptly, functioning as a scene wrap-up rather than a comprehensive case outro. No overall resolution or emotional resonance.",
+          "fix": "Add a dedicated outro section that provides case resolution for Megan, acknowledges the victims, and leaves a haunting final thought. Example: 'While Darren was cleared, the chilling question of how Megan Huntsman hid her dark secret for so long, and the silent suffering of her victims, continues to haunt the quiet town of Pleasant Grove, a stark reminder of the darkness that can hide in plain sight.'",
+          "why_this_helps": "Provides essential closure and a resonant final image for the entire case, preventing viewer confusion and drop-off, and leaving a lasting emotional impact."
+        }
+      ],
+      "summary": "The script ends abruptly with a scene wrap-up, completely lacking a proper outro for the overall case, which leaves the audience without resolution or emotional resonance. This is a critical structural flaw.",
+      "suggestions_list": [
+        "Add a dedicated outro section that summarizes the case's resolution (or lack thereof) for Megan Huntsman and the victims.",
+        "Craft a resonant final line that leaves viewers with a lasting emotional impression or a thought-provoking question about the tragedy.",
+        "Ensure any CTA or sponsor message is placed *after* this emotional echo."
+      ]
+    }
+  },
+  "overall_rating": 7,
+  "strengths": [
+    "Hook lands immediately with high stakes and escalating mystery.",
+    "Suspense builds effectively through progressive discoveries and timed reveals.",
+    "Tone is consistently serious, respectful, and human.",
+    "Intro expertly escalates from one body to multiple, locking in viewers.",
+    "Story structure is logical with clear act turns and good forward momentum.",
+    "Pacing is strong, pushing the narrative with new information and alternating scenes.",
+    "Mini-hooks are present, preventing long flat spots."
+  ],
+  "weaknesses": [
+    "Darren's potential involvement is resolved too cleanly, losing lingering suspense.",
+    "Occasional true crime clichés dull the narrative edge.",
+    "The major reveal of multiple bodies is softened by pre-contextualization, blunting its impact.",
+    "Early background exposition slightly slows the initial discovery.",
+    "Too many mini-hooks are vague, failing to sharpen curiosity.",
+    "The script completely lacks an overall outro, leaving the case unresolved and without emotional closure."
+  ],
+  "suggestions": [
+    "Reframe Darren's conclusion to maintain ambiguity about his knowledge.",
+    "Sharpen vague phrasing and eliminate common true crime clichés.",
+    "Deliver Megan's confession about multiple bodies as a direct, shocking reveal, then provide context.",
+    "Condense early background exposition to accelerate the discovery sequence.",
+    "Sharpen vague mini-hooks into concrete questions or specific hints of new information.",
+    "Insert immediate, unresolved questions after major reveals to maintain momentum.",
+    "Add a dedicated outro section to summarize the case, acknowledge victims, and provide a haunting final thought.",
+    "Craft a resonant final line for emotional impact and closure."
+  ],
+  "drop_off_risks": [
+    "Early discovery sequence (~01:00-01:30): Background exposition on Darren's house and family slows the initial tension. Fix: Condense and reframe to keep focus on the unfolding crime scene.",
+    "After initial baby discovery (~04:00-05:00): Procedural recap instead of an immediate next question creates a lull. Fix: Insert an immediate, unresolved question about the scale of the horror.",
+    "Before major reveal of multiple bodies (~06:00-07:00): Background on Megan's addiction delays the shocking confession. Fix: Reorder addiction context to after the full confession.",
+    "End of script: Abrupt ending with no overall case resolution or emotional echo. Fix: Add a dedicated outro section for closure and lasting impact."
+  ],
+  "viral_quotient": "The script's strong hook, escalating suspense, and generally effective pacing create high retention through the main narrative. However, the complete absence of an outro leaves the audience without resolution, significantly hindering its shareability and overall viral potential."
+}
