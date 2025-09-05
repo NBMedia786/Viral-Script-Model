@@ -1157,6 +1157,56 @@
 # - FIX: history loader normalizes created_at (epoch/str/missing) => consistent ISO; safe sort
 # - NEW: history saved to a WRITABLE data dir on Streamlit Cloud; Recents merge data+repo; source chip
 
+# app_grammarly_ui.py — Mysterious 7 (Exact DOCX-format center pane + robust AOI highlights + Recents)
+# - Preserves DOCX headings/bold/italic/underline/spacing and TABLES in the center pane
+# - Highlights AOIs by mapping text ranges onto DOCX runs (offset-accurate, no format loss)
+# - Page scrolls naturally (no inner scroll)
+# - Fallback for TXT/PDF/paste keeps pre-wrap + highlights
+# - Skips heading-like AOIs and suppresses matches overlapping real DOCX headings
+# - Snaps highlight start/end to WORD BOUNDARIES; cleans AOI quotes; robust fuzzy matching
+# - Heals split-word starts & merges tiny punctuation gaps
+# - Bridges across zero-width / soft-hyphen / NBSP separators so spans don’t end mid-word
+# - HEADER PATCH: Title never clipped when sidebar collapses
+# - DOCX table merged-cell de-dupe parity + heading suppression inside table cells
+# - Auto-flatten tabular DOCX to paragraph-only DOCX before analysis (no UI changes)
+# - Recents: browse history (title + timestamp + overall), open any run exactly as generated
+# - FIX: history loader normalizes created_at (epoch/str/missing) => consistent ISO; safe sort
+# - NEW: loads .env locally; Streamlit Cloud uses st.secrets via review_engine_multi/utils1
+# - NEW: safe imports for utils1 and review_engine_multi with readable traceback
+
+# app_grammarly_ui.py — Mysterious 7 (Exact DOCX-format center pane + robust AOI highlights + Recents)
+# - Preserves DOCX headings/bold/italic/underline/spacing and TABLES in the center pane
+# - Highlights AOIs by mapping text ranges onto DOCX runs (offset-accurate, no format loss)
+# - Page scrolls naturally (no inner scroll)
+# - Fallback for TXT/PDF/paste keeps pre-wrap + highlights
+# - Skips heading-like AOIs and suppresses matches overlapping real DOCX headings
+# - Snaps highlight start/end to WORD BOUNDARIES; cleans AOI quotes; robust fuzzy matching
+# - Heals split-word starts & merges tiny punctuation gaps
+# - Bridges across zero-width / soft-hyphen / NBSP separators so spans don’t end mid-word
+# - HEADER PATCH: Title never clipped when sidebar collapses
+# - DOCX table merged-cell de-dupe parity + heading suppression inside table cells
+# - Auto-flatten tabular DOCX to paragraph-only DOCX before analysis (no UI changes)
+# - Recents: browse history (title + timestamp + overall), open any run exactly as generated
+# - FIX: history loader normalizes created_at (epoch/str/missing) => consistent ISO; safe sort
+# - NEW: history saved to a WRITABLE data dir on Streamlit Cloud; Recents merge data+repo; source chip
+
+# app_grammarly_ui.py — Mysterious 7 (Exact DOCX-format center pane + robust AOI highlights + Recents)
+# - Preserves DOCX headings/bold/italic/underline/spacing and TABLES in the center pane
+# - Highlights AOIs by mapping text ranges onto DOCX runs (offset-accurate, no format loss)
+# - Page scrolls naturally (no inner scroll)
+# - Fallback for TXT/PDF/paste keeps pre-wrap + highlights
+# - Skips heading-like AOIs and suppresses matches overlapping real DOCX headings
+# - Snaps highlight start/end to WORD BOUNDARIES; cleans AOI quotes; robust fuzzy matching
+# - Heals split-word starts & merges tiny punctuation gaps
+# - Bridges across zero-width / soft-hyphen / NBSP separators so spans don’t end mid-word
+# - HEADER PATCH: Title never clipped when sidebar collapses
+# - DOCX table merged-cell de-dupe parity + heading suppression inside table cells
+# - Auto-flatten tabular DOCX to paragraph-only DOCX before analysis (no UI changes)
+# - Recents: browse history (title + timestamp + overall), open any run exactly as generated
+# - FIX: history loader normalizes created_at (epoch/str/missing) => consistent ISO; safe sort
+# - NEW: history saved to a WRITABLE data dir on Streamlit Cloud; Recents merge data+repo; source chip
+
+
 import os, re, glob, json, tempfile, difflib, uuid, datetime
 from pathlib import Path
 from typing import Dict, Any, List, Tuple, Optional
