@@ -199,7 +199,7 @@ def _invoke_with_retries(llm: ChatGoogleGenerativeAI, prompt: str, tries: int = 
 # Aggregator structured schema (model returns this)
 # -----------------------------------------------------------------------------#
 class AggregatorAll(BaseModel):
-    overall_rating: conint(ge=1, le=10)
+    overall_rating: conint(ge=1, le=10) 
     strengths: List[str]
     weaknesses: List[str]
     suggestions: List[str]
