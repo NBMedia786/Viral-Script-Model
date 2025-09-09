@@ -1177,7 +1177,6 @@ STRICT_MATCH_ONLY = False
 
 # ---------- App config ----------
 st.set_page_config(page_title="M7 — Grammarly UI", page_icon="🕵️", layout="wide")
-
 # ---------- Header patch & CSS ----------
 def render_app_title():
     st.markdown(
@@ -1186,9 +1185,34 @@ def render_app_title():
     )
     st.markdown("""
     <style>
-    :root { --sep:#e5e7eb; }
-    .stApp .block-container { padding-top: 4.25rem !important; }
+    html { color-scheme: light dark; }
 
+    /* ===========================================================
+       Global theming tokens (match reference screenshots)
+       Light: light grey card + black text
+       Dark : dark grey card + white text
+    ============================================================ */
+    :root{
+      /* Light mode */
+      --m7-surface: #eef2f7;            /* card / textbox background */
+      --m7-on-surface: #0f172a;         /* text on card */
+      --m7-border: rgba(15,23,42,.14);  /* borders (light) */
+      --sep: #e5e7eb;                   /* column divider (light) */
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        /* Dark mode */
+        --m7-surface: #2f333a;          /* card / textbox background */
+        --m7-on-surface: #ffffff;       /* text on card */
+        --m7-border: rgba(255,255,255,.18);
+        --sep: #2a2f37;
+      }
+    }
+
+    /* ===========================================================
+       Page chrome
+    ============================================================ */
+    .stApp .block-container { padding-top: 4.25rem !important; }
     .app-title{
       font-weight: 700; font-size: 2.1rem; line-height: 1.3;
       margin: 0 0 1rem 0; padding-left: 40px !important; padding-top: .25rem !important;
@@ -1205,28 +1229,120 @@ def render_app_title():
     div[data-testid="column"]:nth-of-type(2){position:relative;}
     div[data-testid="column"]:nth-of-type(2)::after{content:"";position:absolute;top:0;right:0;width:1px;height:100%;background:var(--sep);}
 
-    /* parameter chips */
-    .param-row{display:flex;gap:8px;overflow-x:auto;padding:0 2px 8px;}
-    .param-chip{padding:6px 10px;border-radius:999px;font-size:13px;white-space:nowrap;border:1px solid transparent;cursor:pointer;}
+    /* ===========================================================
+       Universal “card / textbox” surface
+    ============================================================ */
+    .m7-card{
+      background: var(--m7-surface);
+      border: 1px solid var(--m7-border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: var(--m7-on-surface);
+    }
+    .m7-card, .m7-card * { color: var(--m7-on-surface) !important; }
 
-    /* center script box */
-    .docxwrap{ border:1px solid #eee; border-radius:8px; padding:16px 14px 18px; position: relative; }
-    .docxwrap .h1, .docxwrap .h2, .docxwrap .h3 { font-weight:700; margin: 10px 0 6px; }
-    .docxwrap .h1 { font-size: 1.3rem; border-bottom: 2px solid #000; padding-bottom: 4px; }
-    .docxwrap .h2 { font-size: 1.15rem; border-bottom: 1px solid #000; padding-bottom: 3px; }
+    /* Center script box */
+    .docxwrap{
+      background: var(--m7-surface);
+      color: var(--m7-on-surface);
+      border: 1px solid var(--m7-border);
+      border-radius: 12px;
+      padding: 16px 14px 18px;
+    }
+    .docxwrap, .docxwrap * { color: var(--m7-on-surface) !important; }
+    .docxwrap .h1, .docxwrap .h2, .docxwrap .h3 { font-weight:700; margin:10px 0 6px; }
+    .docxwrap .h1 { font-size: 1.3rem; border-bottom: 2px solid currentColor; padding-bottom: 4px; }
+    .docxwrap .h2 { font-size: 1.15rem; border-bottom: 1px solid currentColor; padding-bottom: 3px; }
     .docxwrap .h3 { font-size: 1.05rem; }
     .docxwrap p { margin: 10px 0; line-height: 1.7; font-family: ui-serif, Georgia, "Times New Roman", serif; }
-    .docxwrap strong { font-weight:700; } .docxwrap em { font-style:italic; } .docxwrap u { text-decoration:underline; }
     .docxwrap table { border-collapse: collapse; width: 100%; margin: 12px 0; }
-    .docxwrap th, .docxwrap td { border:1px solid #bbb; padding:8px; vertical-align:top; font-family: ui-serif, Georgia, "Times New Roman", serif; line-height:1.6; }
+    .docxwrap th, .docxwrap td { border:1px solid var(--m7-border); padding:8px; vertical-align:top; line-height:1.6; }
+    .docxwrap mark{ padding:0 2px; border-radius:3px; border:1px solid var(--m7-border); cursor: pointer; }
 
-    /* clickable highlight */
-    .docxwrap mark{ padding:0 2px; border-radius:3px; border:1px solid rgba(0,0,0,.12); cursor: pointer; }
+    /* Recents cards — clickable anchor */
+    .rec-card{
+      display:block; text-decoration:none !important;
+      background: var(--m7-surface);
+      border:1px solid var(--m7-border);
+      border-radius: 12px;
+      padding: 14px 16px; margin: 10px 0 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
+      color: var(--m7-on-surface) !important;
+      transition: filter .1s ease, transform .02s ease;
+    }
+    .rec-card:hover{ filter: brightness(1.02); }
+    .rec-card:active{ transform: translateY(1px); }
+    .rec-card, .rec-card * { color: var(--m7-on-surface) !important; }
+    .rec-title{font-weight:600; margin-bottom:.25rem;}
+    .rec-meta{opacity:.85 !important; font-size:12.5px; margin-bottom:.4rem;}
+    .rec-row{display:flex; align-items:center; justify-content:space-between; gap:12px;}
 
-    /* Recents cards */
-    .rec-card{ border:1px solid #e5e7eb; border-radius:10px; padding:14px 16px; margin:10px 0 16px; box-shadow:0 1px 0 rgba(0,0,0,.02); background:#fff; }
-    .rec-title{font-weight:600; margin-bottom:.25rem;} .rec-meta{color:#6b7280; font-size:12.5px; margin-bottom:.4rem;} .rec-row{display:flex; align-items:center; justify-content:space-between; gap:12px;}
-                
+    /* ===========================================================
+       Make inputs/selects/uploaders look like the same textbox
+    ============================================================ */
+    .stTextInput>div>div,
+    .stTextArea>div>div,
+    .stNumberInput>div>div,
+    .stDateInput>div>div,
+    .stTimeInput>div>div,
+    .stFileUploader>div,
+    div[data-baseweb="select"]{
+      background: var(--m7-surface) !important;
+      border: 1px solid var(--m7-border) !important;
+      border-radius: 10px !important;
+      color: var(--m7-on-surface) !important;
+    }
+    .stTextInput input,
+    .stTextArea textarea,
+    .stNumberInput input,
+    .stDateInput input,
+    .stTimeInput input,
+    .stFileUploader div,
+    div[data-baseweb="select"] *{
+      color: var(--m7-on-surface) !important;
+    }
+    /* placeholder color per theme */
+    .stTextInput input::placeholder,
+    .stTextArea textarea::placeholder{ color: rgba(16,24,39,.55) !important; }
+    @media (prefers-color-scheme: dark){
+      .stTextInput input::placeholder,
+      .stTextArea textarea::placeholder{ color: rgba(255,255,255,.75) !important; }
+    }
+    /* ==== Force file uploader placeholder text to follow theme ==== */
+    div[data-testid="stFileUploaderDropzone"] label span {
+    color: var(--m7-on-surface) !important;
+    opacity: 1 !important;
+    }
+    div[data-testid="stFileUploaderDropzone"] label {
+    color: var(--m7-on-surface) !important;
+    }
+    /* ===========================================================
+       Code / pre blocks & Markdown text boxes
+    ============================================================ */
+    .stMarkdown pre,
+    pre[class*="language-"],
+    .stCodeBlock{
+      background: var(--m7-surface) !important;
+      color: var(--m7-on-surface) !important;
+      border: 1px solid var(--m7-border) !important;
+      border-radius: 12px !important;
+      padding: 12px 14px !important;
+      overflow:auto;
+    }
+    .stMarkdown pre code{ background: transparent !important; color: inherit !important; }
+
+    /* ===========================================================
+       DataFrame wrapper
+    ============================================================ */
+    div[data-testid="stDataFrame"]{
+      background: var(--m7-surface);
+      border: 1px solid var(--m7-border);
+      border-radius: 12px;
+      padding: 6px 8px;
+      color: var(--m7-on-surface);
+    }
+    div[data-testid="stDataFrame"] * { color: var(--m7-on-surface) !important; }
+
     </style>
     """, unsafe_allow_html=True)
 
@@ -1247,6 +1363,26 @@ for key, default in [
     ("ui_mode", "home"),
 ]:
     st.session_state.setdefault(key, default)
+
+# ---------- helpers for query params (compat across Streamlit versions) ----------
+def _get_query_param(key: str) -> Optional[str]:
+    val = None
+    try:
+        # New API (1.30+)
+        val = st.query_params.get(key)
+    except Exception:
+        # Legacy API
+        q = st.experimental_get_query_params()
+        v = q.get(key)
+        if isinstance(v, list): val = v[0] if v else None
+        else: val = v
+    return val
+
+def _clear_query_params():
+    try:
+        st.query_params.clear()
+    except Exception:
+        st.experimental_set_query_params()
 
 # ---------- Sanitizer ----------
 _EMOJI_RE = re.compile(
@@ -1757,6 +1893,30 @@ def _load_all_history() -> List[dict]:
     out.sort(key=lambda r: r.get("created_at") or "", reverse=True)
     return out
 
+def _open_history_run_by_id(run_id: str) -> bool:
+    """Open a history run by its run_id. Returns True if loaded."""
+    if not run_id: return False
+    recs = _load_all_history()
+    match = next((r for r in recs if r.get("run_id") == run_id), None)
+    if not match: return False
+    path = match.get("_path")
+    if not path or not os.path.exists(path): return False
+    try:
+        with open(path, "r", encoding="utf-8") as f: jj = json.load(f)
+    except Exception:
+        return False
+    st.session_state.script_text      = jj.get("script_text","")
+    st.session_state.base_stem        = jj.get("title","untitled")
+    st.session_state.data             = jj.get("data",{})
+    st.session_state.heading_ranges   = jj.get("heading_ranges",[])
+    st.session_state.spans_by_param   = jj.get("spans_by_param",{})
+    st.session_state.param_choice     = None
+    st.session_state.source_docx_path = jj.get("source_docx_path")
+    st.session_state.review_ready     = True
+    st.session_state["aoi_match_ranges"] = jj.get("aoi_match_ranges", {})
+    st.session_state.ui_mode          = "review"
+    return True
+
 def _render_recents_centerpane():
     st.subheader("📄 Recents")
     q = st.text_input("Filter by title…", "")
@@ -1764,44 +1924,24 @@ def _render_recents_centerpane():
     with cols[0]:
         if st.button("← Back"):
             st.session_state.ui_mode = "home"; st.rerun()
+
     recs = _load_all_history()
     ql = q.strip().lower()
     if ql: recs = [r for r in recs if ql in (r.get("title","").lower())]
     if not recs: st.caption("No history yet."); st.stop()
 
+    # Each card is a clickable <a class="rec-card" href="?open=<run_id>">
     for rec in recs:
         run_id = rec.get("run_id"); title = rec.get("title") or "(untitled)"
         created_h = rec.get("created_at_human",""); overall = rec.get("overall_rating","")
-        with st.container():
-            st.markdown(f"""
-            <div class="rec-card">
-              <div class="rec-row">
-                <div>
-                  <div class="rec-title">{title}</div>
-                  <div class="rec-meta">{created_h}</div>
-                  <div><strong>Overall:</strong> {overall if overall != "" else "—"}/10</div>
-                </div>
-                <div>""", unsafe_allow_html=True)
-            open_key = f"open_{run_id}"; st.button("Open", key=open_key)
-            st.markdown("</div></div></div>", unsafe_allow_html=True)
-            if st.session_state.get(open_key):
-                path = rec.get("_path")
-                if path and os.path.exists(path):
-                    try:
-                        with open(path, "r", encoding="utf-8") as f: jj = json.load(f)
-                    except Exception:
-                        st.error("Could not load this run file."); st.stop()
-                    st.session_state.script_text      = jj.get("script_text","")
-                    st.session_state.base_stem        = jj.get("title","untitled")
-                    st.session_state.data             = jj.get("data",{})
-                    st.session_state.heading_ranges   = jj.get("heading_ranges",[])
-                    st.session_state.spans_by_param   = jj.get("spans_by_param",{})
-                    st.session_state.param_choice     = None
-                    st.session_state.source_docx_path = jj.get("source_docx_path")
-                    st.session_state.review_ready     = True
-                    st.session_state["aoi_match_ranges"] = jj.get("aoi_match_ranges", {})
-                    st.session_state.ui_mode          = "review"
-                    st.rerun()
+        card_html = f"""
+        <a class="rec-card" href="?open={run_id}">
+          <div class="rec-title">{title}</div>
+          <div class="rec-meta">{created_h}</div>
+          <div><strong>Overall:</strong> {overall if overall != "" else "—"}/10</div>
+        </a>
+        """
+        st.markdown(card_html, unsafe_allow_html=True)
 
 # ---------- Sidebar ----------
 with st.sidebar:
@@ -1822,17 +1962,18 @@ with st.sidebar:
                 else None
             )
         st.session_state.ui_mode = "home"
+        _clear_query_params()
         st.rerun()
 
     if st.button("📁 Recents", use_container_width=True):
         st.session_state.ui_mode = "recents"
+        _clear_query_params()
         st.rerun()
 
 # ---------- Input screen ----------
 def render_home():
     st.subheader("🎬 Script Source")
 
-    # Only keep Upload file tab
     (tab_upload,) = st.tabs(["Upload file"])
     uploaded_file = None
     uploaded_name = None
@@ -1912,6 +2053,7 @@ def render_home():
             aoi_match_ranges=st.session_state.get("aoi_match_ranges", {})
         )
 
+        _clear_query_params()
         st.rerun()
 
 # ---------- Results screen ----------
@@ -2042,6 +2184,61 @@ def render_review():
 
         payload_json = json.dumps(aoi_payload, ensure_ascii=False)
 
+        # Theme CSS for the iframe + tooltip CSS
+        frame_theme_css = """
+        <style>
+          :root{
+            /* Light mode */
+            --m7-surface: #eef2f7;
+            --m7-on-surface: #0f172a;
+            --m7-border: rgba(15,23,42,.14);
+          }
+          @media (prefers-color-scheme: dark){
+            :root{
+              /* Dark mode */
+              --m7-surface: #2f333a;
+              --m7-on-surface: #ffffff;
+              --m7-border: rgba(255,255,255,.18);
+            }
+            body { background: transparent !important; }
+          }
+
+          .docxwrap{
+            background: var(--m7-surface);
+            color: var(--m7-on-surface);
+            border: 1px solid var(--m7-border);
+            border-radius: 12px;
+            padding: 16px 14px 18px;
+          }
+          .docxwrap, .docxwrap * { color: var(--m7-on-surface) !important; }
+          .docxwrap th, .docxwrap td { border:1px solid var(--m7-border); }
+        </style>
+        """
+
+        tooltip_css = """
+        <style>
+        .aoi-pop {
+          position: absolute; max-width: 520px; min-width: 320px;
+          background: var(--m7-surface); border: 1px solid var(--m7-border); border-radius: 10px;
+          box-shadow: 0 10px 25px rgba(0,0,0,.12);
+          padding: 12px 14px; z-index: 9999; transform: translateY(-8px);
+          color: var(--m7-on-surface);
+        }
+        .aoi-pop h4 { margin: 0 0 .35rem 0; font-size: .95rem; }
+        .aoi-pop p  { margin: .15rem 0; line-height: 1.5; }
+        .aoi-pop .muted { opacity:.85; font-size:.85rem; }
+        .aoi-arrow {
+          position:absolute; left:50%; transform:translateX(-50%);
+          bottom:-7px; width:0;height:0;border-left:7px solid transparent;
+          border-right:7px solid transparent;border-top:7px solid var(--m7-border);
+        }
+        .aoi-arrow::after{
+          content:""; position:absolute; left:-6px; top:-7px; width:0;height:0;
+          border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--m7-surface);
+        }
+        </style>
+        """
+
         # Render HTML core (DOCX vs plaintext) with data-aid attributes
         if st.session_state.source_docx_path and os.path.exists(st.session_state.source_docx_path):
             html_core = render_docx_html_with_highlights(
@@ -2049,7 +2246,6 @@ def render_review():
                 merge_overlaps_and_adjacent(script_text, spans)
             )
         else:
-            # SAFER PLAIN-TEXT FALLBACK: slice first, escape after (preserves indices)
             from html import escape as _esc
             orig = script_text
             spans2 = [s for s in merge_overlaps_and_adjacent(orig, spans) if s[0] < s[1]]
@@ -2071,110 +2267,96 @@ def render_review():
                 '</p></div>'
             )
 
-        # Popup CSS + JS (no f-strings; placeholders replaced below)
-        tooltip_css = """
-        <style>
-        .aoi-pop {
-          position: absolute; max-width: 520px; min-width: 320px;
-          background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
-          box-shadow: 0 10px 25px rgba(0,0,0,.12);
-          padding: 12px 14px; z-index: 9999; transform: translateY(-8px);
-        }
-        .aoi-pop h4 { margin: 0 0 .35rem 0; font-size: .95rem; }
-        .aoi-pop p  { margin: .15rem 0; line-height: 1.5; }
-        .aoi-pop .muted { color:#6b7280; font-size:.85rem; }
-        .aoi-arrow {
-          position:absolute; left:50%; transform:translateX(-50%);
-          bottom:-7px; width:0;height:0;border-left:7px solid transparent;
-          border-right:7px solid transparent;border-top:7px solid #e5e7eb;
-        }
-        .aoi-arrow::after{
-          content:""; position:absolute; left:-6px; top:-7px; width:0;height:0;
-          border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid #fff;
-        }
-        </style>
-        """
-
+        # Popup + autosize JS shell  (NO f-string here!)
         html_shell = """
-        {tooltip_css}
-        <div id="m7-doc">{html_core}</div>
-        <div id="aoi-pop" class="aoi-pop" style="display:none;">
-          <div id="aoi-pop-content"></div>
-          <div class="aoi-arrow"></div>
-        </div>
-        <script>
-        (function(){
-          const AOI = __PAYLOAD__;
-          const wrap = document.getElementById('m7-doc');
-          const pop  = document.getElementById('aoi-pop');
-          const body = document.getElementById('aoi-pop-content');
+%%FRAME_THEME_CSS%%
+%%TOOLTIP_CSS%%
+<div id="m7-doc">%%HTML_CORE%%</div>
+<div id="aoi-pop" class="aoi-pop" style="display:none;">
+  <div id="aoi-pop-content"></div>
+  <div class="aoi-arrow"></div>
+</div>
+<script>
+(function(){
+  const AOI = __PAYLOAD__;
+  const wrap = document.getElementById('m7-doc');
+  const pop  = document.getElementById('aoi-pop');
+  const body = document.getElementById('aoi-pop-content');
 
-          // --- Auto-resize the Streamlit iframe to remove inner scroll
-          function resizeIframe() {
-            try {
-              const h = Math.max(
-                document.documentElement.scrollHeight,
-                document.body.scrollHeight
-              );
-              if (window.frameElement) {
-                window.frameElement.style.height = (h + 20) + 'px';
-                window.frameElement.style.width  = '100%';
-              }
-            } catch(e) {}
-          }
-          window.addEventListener('load', resizeIframe);
-          window.addEventListener('resize', resizeIframe);
+  function resizeIframe() {
+    try {
+      const h = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      if (window.frameElement) {
+        window.frameElement.style.height = (h + 20) + 'px';
+        window.frameElement.style.width  = '100%';
+      }
+    } catch(e) {}
+  }
+  window.addEventListener('load', resizeIframe);
+  window.addEventListener('resize', resizeIframe);
 
-          function hide(){ pop.style.display='none'; }
-          function showFor(mark){
-            const aid = mark.getAttribute('data-aid');
-            const d = AOI[aid]; if(!d) return;
-            body.innerHTML =
-              (d.line  ? '<p><strong>Line:</strong> '  + d.line  + '</p>' : '') +
-              (d.issue ? '<p><strong>Issue:</strong> ' + d.issue + '</p>' : '') +
-              (d.fix   ? '<p><strong>Fix:</strong> '   + d.fix   + '</p>' : '') +
-              (d.why   ? '<p class="muted">'           + d.why   + '</p>' : '');
-            pop.style.display = 'block';
+  function hide(){ pop.style.display='none'; }
+  function showFor(mark){
+    const aid = mark.getAttribute('data-aid');
+    const d = AOI[aid]; if(!d) return;
+    body.innerHTML =
+      (d.line  ? '<p><strong>Line:</strong> '  + d.line  + '</p>' : '') +
+      (d.issue ? '<p><strong>Issue:</strong> ' + d.issue + '</p>' : '') +
+      (d.fix   ? '<p><strong>Fix:</strong> '   + d.fix   + '</p>' : '') +
+      (d.why   ? '<p class="muted">'           + d.why   + '</p>' : '');
+    pop.style.display = 'block';
 
-            const r = mark.getBoundingClientRect();
-            const scY = window.scrollY || document.documentElement.scrollTop;
-            const scX = window.scrollX || document.documentElement.scrollLeft;
-            let top  = r.top + scY - pop.offsetHeight - 10;
-            let left = r.left + scX + r.width/2 - pop.offsetWidth/2;
-            if (top < 8) top = r.bottom + scY + 10;
-            if (left < 8) left = 8;
-            pop.style.top  = top + 'px';
-            pop.style.left = left + 'px';
+    const r = mark.getBoundingClientRect();
+    const scY = window.scrollY || document.documentElement.scrollTop;
+    const scX = window.scrollX || document.documentElement.scrollLeft;
+    let top  = r.top + scY - pop.offsetHeight - 10;
+    let left = r.left + scX + r.width/2 - pop.offsetWidth/2;
+    if (top < 8) top = r.bottom + scY + 10;
+    if (left < 8) left = 8;
+    pop.style.top  = top + 'px';
+    pop.style.left = left + 'px';
 
-            resizeIframe(); // adjust iframe height after popup appears
-          }
+    resizeIframe();
+  }
 
-          // Click highlight to toggle popup
-          wrap.addEventListener('click', (e) => {
-            const m = e.target.closest('.aoi-mark');
-            if(!m){ hide(); return; }
-            if(pop.style.display === 'block'){ hide(); }
-            showFor(m);
-            e.stopPropagation();
-          });
+  // Click highlight to toggle popup
+  wrap.addEventListener('click', (e) => {
+    const m = e.target.closest('.aoi-mark');
+    if(!m){ hide(); return; }
+    if(pop.style.display === 'block'){ hide(); }
+    showFor(m);
+    e.stopPropagation();
+  });
 
-          // Click outside to close
-          document.addEventListener('click', (e) => {
-            if(!e.target.closest('.aoi-pop') && !e.target.closest('.aoi-mark')) hide();
-          });
-        })();
-        </script>
-        """
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.aoi-pop') && !e.target.closest('.aoi-mark')) hide();
+  });
+})();
+</script>
+"""
 
-        # Inject variables into placeholders
-        html_shell = html_shell.replace("{tooltip_css}", tooltip_css)
-        html_shell = html_shell.replace("{html_core}", html_core)
-        html_shell = html_shell.replace("__PAYLOAD__", payload_json)
+        # Inject variables via plain string replacement (no brace escaping headaches)
+        html_shell = (
+            html_shell
+            .replace("%%FRAME_THEME_CSS%%", frame_theme_css)
+            .replace("%%TOOLTIP_CSS%%", tooltip_css)
+            .replace("%%HTML_CORE%%", html_core)
+            .replace("__PAYLOAD__", payload_json)
+        )
 
         # Render WITHOUT inner scroll; autosize via JS
         components.html(html_shell, height=400, scrolling=False)
 
-# ---------- Router ----------
+# ---------- Router & query param open ----------
+# If a link like ?open=<run_id> is present, open that review immediately.
+_open_qp = _get_query_param("open")
+if _open_qp and _open_history_run_by_id(_open_qp):
+    _clear_query_params()  # avoid re-opening on subsequent reruns
+
 mode = st.session_state.ui_mode
 if mode == "recents":
     _render_recents_centerpane()
