@@ -1154,28 +1154,68 @@ from docx.text.paragraph import Paragraph
 from docx.table import Table
 
 # =========================
-# RunPod S3 (inline helpers)
+# RunPod S3 (inline helpers) — FIXED
 # =========================
 import boto3
 from botocore.config import Config
-from botocore.exceptions import ClientError
+from botocore.exceptions import ClientError, EndpointConnectionError, NoCredentialsError
 
-_RP_ENDPOINT = os.getenv("RUNPOD_S3_ENDPOINT", "").strip()
-_RP_BUCKET   = os.getenv("RUNPOD_S3_BUCKET", "").strip()
-_RP_REGION   = os.getenv("RUNPOD_S3_REGION", "").strip()
+# Accept both AWS_* and RUNPOD_* style envs / st.secrets
+def _get_env(key: str, default: str = "") -> str:
+    v = os.getenv(key, "")
+    if v: 
+        return v.strip()
+    try:
+        v2 = st.secrets.get(key)
+        if isinstance(v2, str):
+            return v2.strip()
+    except Exception:
+        pass
+    return (default or "").strip()
+
+# Primary config
+_RP_ENDPOINT = _get_env("RUNPOD_S3_ENDPOINT")
+_RP_BUCKET   = _get_env("RUNPOD_S3_BUCKET")
+_RP_REGION   = _get_env("RUNPOD_S3_REGION") or _get_env("AWS_DEFAULT_REGION") or ""
+
+# Credentials: prefer AWS_* if present; else accept RUNPOD_* fallbacks
+_AK = _get_env("AWS_ACCESS_KEY_ID") or _get_env("RUNPOD_S3_ACCESS_KEY_ID") or _get_env("RUNPOD_S3_ACCESS_KEY")
+_SK = _get_env("AWS_SECRET_ACCESS_KEY") or _get_env("RUNPOD_S3_SECRET_ACCESS_KEY") or _get_env("RUNPOD_S3_SECRET_KEY")
+_ST = _get_env("AWS_SESSION_TOKEN")  # optional
+
+# Options
+_FORCE_PATH = (_get_env("RUNPOD_S3_FORCE_PATH_STYLE") or "true").lower() in {"1","true","yes"}
+_USE_SSL    = (_get_env("RUNPOD_S3_USE_SSL") or "true").lower() in {"1","true","yes"}
+_VERIFY_SSL = (_get_env("RUNPOD_S3_VERIFY_SSL") or "true").lower() in {"1","true","yes"}
 
 def _s3_enabled() -> bool:
-    return bool(_RP_ENDPOINT and _RP_BUCKET)
+    return bool(_RP_ENDPOINT and _RP_BUCKET and _AK and _SK)
 
 @st.cache_resource(show_spinner=False)
 def _s3_client():
     if not _s3_enabled():
         return None
+    session_kwargs = dict(
+        aws_access_key_id=_AK,
+        aws_secret_access_key=_SK,
+    )
+    if _ST:
+        session_kwargs["aws_session_token"] = _ST
+
+    # s3v4 + path style are common requirements for S3-compatible services
+    cfg = Config(
+        signature_version="s3v4",
+        s3={"addressing_style": "path" if _FORCE_PATH else "auto"},
+        retries={"max_attempts": 3, "mode": "standard"}
+    )
     return boto3.client(
         "s3",
         endpoint_url=_RP_ENDPOINT,
         region_name=_RP_REGION or None,
-        config=Config(s3={"addressing_style": "path"})
+        use_ssl=_USE_SSL,
+        verify=_VERIFY_SSL,
+        config=cfg,
+        **session_kwargs,
     )
 
 def save_text_key(key: str, text: str) -> str:
@@ -1204,8 +1244,8 @@ def read_text_key(key: str, default: str = "") -> str:
         except Exception:
             return default
     try:
-        obj = _s3_client().get_object(Bucket=_RP_BUCKET, Key=key)
-        return obj["Body"].read().decode("utf-8", errors="ignore")
+        resp = _s3_client().get_object(Bucket=_RP_BUCKET, Key=key)
+        return resp["Body"].read().decode("utf-8", errors="ignore")
     except Exception:
         return default
 
@@ -1217,32 +1257,43 @@ def read_bytes_key(key: str) -> Optional[bytes]:
         except Exception:
             return None
     try:
-        obj = _s3_client().get_object(Bucket=_RP_BUCKET, Key=key)
-        return obj["Body"].read()
+        resp = _s3_client().get_object(Bucket=_RP_BUCKET, Key=key)
+        return resp["Body"].read()
     except Exception:
         return None
 
 def list_prefix(prefix: str) -> List[str]:
-    """List object keys under prefix (or local dir paths if not S3)."""
+    """
+    List object keys under prefix (or local dir paths if not S3).
+    In S3 mode we always return KEYS (not URLs).
+    """
     if not _s3_enabled():
         base = prefix if os.path.isdir(prefix) else os.path.dirname(prefix)
         try:
-            return [os.path.join(base, p) for p in os.listdir(base)]
+            return [os.path.join(base, p) for p in os.listdir(base) if p.endswith(".json")]
         except Exception:
             return []
+
     out: List[str] = []
     token = None
-    while True:
-        kwargs = dict(Bucket=_RP_BUCKET, Prefix=prefix.rstrip("/") + "/")
-        if token:
-            kwargs["ContinuationToken"] = token
-        resp = _s3_client().list_objects_v2(**kwargs)
-        for c in resp.get("Contents", []):
-            out.append(c["Key"])
-        token = resp.get("NextContinuationToken")
-        if not token:
-            break
-    return [k for k in out if k.endswith(".json")]
+    # Normalize to "dir/" prefix for S3 listing
+    s3_prefix = prefix.rstrip("/") + "/"
+    try:
+        while True:
+            kwargs = {"Bucket": _RP_BUCKET, "Prefix": s3_prefix}
+            if token:
+                kwargs["ContinuationToken"] = token
+            resp = _s3_client().list_objects_v2(**kwargs)
+            for c in resp.get("Contents", []):
+                k = c.get("Key", "")
+                if k.endswith(".json"):
+                    out.append(k)
+            token = resp.get("NextContinuationToken")
+            if not token:
+                break
+    except (ClientError, EndpointConnectionError, NoCredentialsError):
+        return []
+    return out
 
 def presigned_url(key: str, expires: int = 3600) -> Optional[str]:
     if not _s3_enabled():
@@ -1263,11 +1314,12 @@ def ensure_local_copy(key_or_path: str) -> Optional[str]:
     """
     if not _s3_enabled():
         return key_or_path if os.path.exists(key_or_path) else None
-    # Accept raw key ("scripts/foo.docx") or s3://bucket/key
+
     key = key_or_path
     if key.startswith("s3://"):
-        # strip s3://bucket/
-        key = "/".join(key.split("/", 3)[3:])
+        # s3://bucket/path/to/file -> path/to/file
+        parts = key.split("/", 3)
+        key = parts[3] if len(parts) >= 4 else ""
     data = read_bytes_key(key)
     if data is None:
         return None
@@ -1276,6 +1328,31 @@ def ensure_local_copy(key_or_path: str) -> Optional[str]:
     with open(tmp, "wb") as f:
         f.write(data)
     return tmp
+
+def _s3_health_summary() -> dict:
+    """
+    Optional tiny health read you can print if needed.
+    Returns a dict; safe to ignore in production.
+    """
+    info = {
+        "enabled": _s3_enabled(),
+        "endpoint": _RP_ENDPOINT,
+        "bucket": _RP_BUCKET,
+        "region": _RP_REGION,
+        "has_keys": bool(_AK and _SK),
+    }
+    if not _s3_enabled():
+        info["status"] = "local-mode"
+        return info
+    try:
+        # Attempt a very cheap list; no exceptions => reachable
+        _ = _s3_client().list_objects_v2(Bucket=_RP_BUCKET, Prefix=(f"{OUTPUT_DIR}/_history/").rstrip("/") + "/",
+                                         MaxKeys=1)
+        info["status"] = "ok"
+    except Exception as e:
+        info["status"] = f"error: {getattr(e, 'response', {}).get('Error', {}).get('Code', str(e))}"
+    return info
+
 
 # ---------- Folders ----------
 # SCRIPTS_DIR = "scripts"
