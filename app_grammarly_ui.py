@@ -1153,13 +1153,226 @@ from docx.oxml.table import CT_Tbl
 from docx.text.paragraph import Paragraph
 from docx.table import Table
 
+# =========================
+# RunPod S3 (inline helpers) — FIXED
+# =========================
+import boto3
+from botocore.config import Config
+from botocore.exceptions import ClientError, EndpointConnectionError, NoCredentialsError
+
+# Accept both AWS_* and RUNPOD_* style envs / st.secrets
+def _get_env(key: str, default: str = "") -> str:
+    v = os.getenv(key, "")
+    if v: 
+        return v.strip()
+    try:
+        v2 = st.secrets.get(key)
+        if isinstance(v2, str):
+            return v2.strip()
+    except Exception:
+        pass
+    return (default or "").strip()
+
+# Primary config
+_RP_ENDPOINT = _get_env("RUNPOD_S3_ENDPOINT")
+_RP_BUCKET   = _get_env("RUNPOD_S3_BUCKET")
+_RP_REGION   = _get_env("RUNPOD_S3_REGION") or _get_env("AWS_DEFAULT_REGION") or ""
+
+# Credentials: prefer AWS_* if present; else accept RUNPOD_* fallbacks
+_AK = _get_env("AWS_ACCESS_KEY_ID") or _get_env("RUNPOD_S3_ACCESS_KEY_ID") or _get_env("RUNPOD_S3_ACCESS_KEY")
+_SK = _get_env("AWS_SECRET_ACCESS_KEY") or _get_env("RUNPOD_S3_SECRET_ACCESS_KEY") or _get_env("RUNPOD_S3_SECRET_KEY")
+_ST = _get_env("AWS_SESSION_TOKEN")  # optional
+
+# Options
+_FORCE_PATH = (_get_env("RUNPOD_S3_FORCE_PATH_STYLE") or "true").lower() in {"1","true","yes"}
+_USE_SSL    = (_get_env("RUNPOD_S3_USE_SSL") or "true").lower() in {"1","true","yes"}
+_VERIFY_SSL = (_get_env("RUNPOD_S3_VERIFY_SSL") or "true").lower() in {"1","true","yes"}
+
+def _s3_enabled() -> bool:
+    return bool(_RP_ENDPOINT and _RP_BUCKET and _AK and _SK)
+
+@st.cache_resource(show_spinner=False)
+def _s3_client():
+    if not _s3_enabled():
+        return None
+    session_kwargs = dict(
+        aws_access_key_id=_AK,
+        aws_secret_access_key=_SK,
+    )
+    if _ST:
+        session_kwargs["aws_session_token"] = _ST
+
+    # s3v4 + path style are common requirements for S3-compatible services
+    cfg = Config(
+        signature_version="s3v4",
+        s3={"addressing_style": "path" if _FORCE_PATH else "auto"},
+        retries={"max_attempts": 3, "mode": "standard"}
+    )
+    return boto3.client(
+        "s3",
+        endpoint_url=_RP_ENDPOINT,
+        region_name=_RP_REGION or None,
+        use_ssl=_USE_SSL,
+        verify=_VERIFY_SSL,
+        config=cfg,
+        **session_kwargs,
+    )
+
+def save_text_key(key: str, text: str) -> str:
+    if not _s3_enabled():
+        os.makedirs(os.path.dirname(key), exist_ok=True)
+        with open(key, "w", encoding="utf-8") as f:
+            f.write(text)
+        return key
+    _s3_client().put_object(Bucket=_RP_BUCKET, Key=key, Body=text.encode("utf-8"))
+    return f"s3://{_RP_BUCKET}/{key}"
+
+def save_bytes_key(key: str, data: bytes) -> str:
+    if not _s3_enabled():
+        os.makedirs(os.path.dirname(key), exist_ok=True)
+        with open(key, "wb") as f:
+            f.write(data)
+        return key
+    _s3_client().put_object(Bucket=_RP_BUCKET, Key=key, Body=data)
+    return f"s3://{_RP_BUCKET}/{key}"
+
+def read_text_key(key: str, default: str = "") -> str:
+    if not _s3_enabled():
+        try:
+            with open(key, "r", encoding="utf-8") as f:
+                return f.read()
+        except Exception:
+            return default
+    try:
+        resp = _s3_client().get_object(Bucket=_RP_BUCKET, Key=key)
+        return resp["Body"].read().decode("utf-8", errors="ignore")
+    except Exception:
+        return default
+
+def read_bytes_key(key: str) -> Optional[bytes]:
+    if not _s3_enabled():
+        try:
+            with open(key, "rb") as f:
+                return f.read()
+        except Exception:
+            return None
+    try:
+        resp = _s3_client().get_object(Bucket=_RP_BUCKET, Key=key)
+        return resp["Body"].read()
+    except Exception:
+        return None
+
+def list_prefix(prefix: str) -> List[str]:
+    """
+    List object keys under prefix (or local dir paths if not S3).
+    In S3 mode we always return KEYS (not URLs).
+    """
+    if not _s3_enabled():
+        base = prefix if os.path.isdir(prefix) else os.path.dirname(prefix)
+        try:
+            return [os.path.join(base, p) for p in os.listdir(base) if p.endswith(".json")]
+        except Exception:
+            return []
+
+    out: List[str] = []
+    token = None
+    # Normalize to "dir/" prefix for S3 listing
+    s3_prefix = prefix.rstrip("/") + "/"
+    try:
+        while True:
+            kwargs = {"Bucket": _RP_BUCKET, "Prefix": s3_prefix}
+            if token:
+                kwargs["ContinuationToken"] = token
+            resp = _s3_client().list_objects_v2(**kwargs)
+            for c in resp.get("Contents", []):
+                k = c.get("Key", "")
+                if k.endswith(".json"):
+                    out.append(k)
+            token = resp.get("NextContinuationToken")
+            if not token:
+                break
+    except (ClientError, EndpointConnectionError, NoCredentialsError):
+        return []
+    return out
+
+def presigned_url(key: str, expires: int = 3600) -> Optional[str]:
+    if not _s3_enabled():
+        return None
+    try:
+        return _s3_client().generate_presigned_url(
+            "get_object",
+            Params={"Bucket": _RP_BUCKET, "Key": key},
+            ExpiresIn=expires
+        )
+    except ClientError:
+        return None
+
+def ensure_local_copy(key_or_path: str) -> Optional[str]:
+    """
+    For DOCX/PDF parsing we need a real filesystem path.
+    If S3 mode, download to a temp file and return that path.
+    """
+    if not _s3_enabled():
+        return key_or_path if os.path.exists(key_or_path) else None
+
+    key = key_or_path
+    if key.startswith("s3://"):
+        # s3://bucket/path/to/file -> path/to/file
+        parts = key.split("/", 3)
+        key = parts[3] if len(parts) >= 4 else ""
+    data = read_bytes_key(key)
+    if data is None:
+        return None
+    fd, tmp = tempfile.mkstemp(suffix=os.path.splitext(key)[1] or "")
+    os.close(fd)
+    with open(tmp, "wb") as f:
+        f.write(data)
+    return tmp
+
+def _s3_health_summary() -> dict:
+    """
+    Optional tiny health read you can print if needed.
+    Returns a dict; safe to ignore in production.
+    """
+    info = {
+        "enabled": _s3_enabled(),
+        "endpoint": _RP_ENDPOINT,
+        "bucket": _RP_BUCKET,
+        "region": _RP_REGION,
+        "has_keys": bool(_AK and _SK),
+    }
+    if not _s3_enabled():
+        info["status"] = "local-mode"
+        return info
+    try:
+        # Attempt a very cheap list; no exceptions => reachable
+        _ = _s3_client().list_objects_v2(Bucket=_RP_BUCKET, Prefix=(f"{OUTPUT_DIR}/_history/").rstrip("/") + "/",
+                                         MaxKeys=1)
+        info["status"] = "ok"
+    except Exception as e:
+        info["status"] = f"error: {getattr(e, 'response', {}).get('Error', {}).get('Code', str(e))}"
+    return info
+
+
 # ---------- Folders ----------
-SCRIPTS_DIR = "scripts"
-PROMPTS_DIR = "prompts"
-OUTPUT_DIR  = "outputs"
-HISTORY_DIR = os.path.join(OUTPUT_DIR, "_history")
-for p in (SCRIPTS_DIR, PROMPTS_DIR, OUTPUT_DIR, HISTORY_DIR):
-    Path(p).mkdir(parents=True, exist_ok=True)
+# SCRIPTS_DIR = "scripts"
+# PROMPTS_DIR = "prompts"
+# OUTPUT_DIR  = "outputs"
+# HISTORY_DIR = os.path.join(OUTPUT_DIR, "_history")
+# ---------- Folders (all under Scriptmodel/) ----------
+
+BASE_PREFIX = "Scriptmodel"
+
+SCRIPTS_DIR = f"{BASE_PREFIX}/scripts"
+PROMPTS_DIR = f"{BASE_PREFIX}/prompts"
+OUTPUT_DIR  = f"{BASE_PREFIX}/outputs"
+HISTORY_DIR = f"{OUTPUT_DIR}/_history"
+
+
+if not _s3_enabled():
+    for p in (SCRIPTS_DIR, PROMPTS_DIR, OUTPUT_DIR, HISTORY_DIR):
+        Path(p).mkdir(parents=True, exist_ok=True)
+
 
 # ---------- Colors ----------
 PARAM_COLORS: Dict[str, str] = {
@@ -1187,31 +1400,21 @@ def render_app_title():
     <style>
     html { color-scheme: light dark; }
 
-    /* ===========================================================
-       Global theming tokens (match reference screenshots)
-       Light: light grey card + black text
-       Dark : dark grey card + white text
-    ============================================================ */
     :root{
-      /* Light mode */
-      --m7-surface: #eef2f7;            /* card / textbox background */
-      --m7-on-surface: #0f172a;         /* text on card */
-      --m7-border: rgba(15,23,42,.14);  /* borders (light) */
-      --sep: #e5e7eb;                   /* column divider (light) */
+      --m7-surface: #eef2f7;
+      --m7-on-surface: #0f172a;
+      --m7-border: rgba(15,23,42,.14);
+      --sep: #e5e7eb;
     }
     @media (prefers-color-scheme: dark){
       :root{
-        /* Dark mode */
-        --m7-surface: #2f333a;          /* card / textbox background */
-        --m7-on-surface: #ffffff;       /* text on card */
+        --m7-surface: #2f333a;
+        --m7-on-surface: #ffffff;
         --m7-border: rgba(255,255,255,.18);
         --sep: #2a2f37;
       }
     }
 
-    /* ===========================================================
-       Page chrome
-    ============================================================ */
     .stApp .block-container { padding-top: 4.25rem !important; }
     .app-title{
       font-weight: 700; font-size: 2.1rem; line-height: 1.3;
@@ -1223,15 +1426,11 @@ def render_app_title():
     header[data-testid="stHeader"], .stAppHeader { background: transparent !important; box-shadow: none !important; }
     @media (min-width: 992px){ .app-title { padding-left: 0 !important; } }
 
-    /* column dividers */
     div[data-testid="column"]:nth-of-type(1){position:relative;}
     div[data-testid="column"]:nth-of-type(1)::after{content:"";position:absolute;top:0;right:0;width:1px;height:100%;background:var(--sep);}
     div[data-testid="column"]:nth-of-type(2){position:relative;}
     div[data-testid="column"]:nth-of-type(2)::after{content:"";position:absolute;top:0;right:0;width:1px;height:100%;background:var(--sep);}
 
-    /* ===========================================================
-       Universal “card / textbox” surface
-    ============================================================ */
     .m7-card{
       background: var(--m7-surface);
       border: 1px solid var(--m7-border);
@@ -1241,7 +1440,6 @@ def render_app_title():
     }
     .m7-card, .m7-card * { color: var(--m7-on-surface) !important; }
 
-    /* Center script box */
     .docxwrap{
       background: var(--m7-surface);
       color: var(--m7-on-surface);
@@ -1259,7 +1457,6 @@ def render_app_title():
     .docxwrap th, .docxwrap td { border:1px solid var(--m7-border); padding:8px; vertical-align:top; line-height:1.6; }
     .docxwrap mark{ padding:0 2px; border-radius:3px; border:1px solid var(--m7-border); cursor: pointer; }
 
-    /* Recents cards — clickable anchor */
     .rec-card{
       display:block; text-decoration:none !important;
       background: var(--m7-surface);
@@ -1277,9 +1474,6 @@ def render_app_title():
     .rec-meta{opacity:.85 !important; font-size:12.5px; margin-bottom:.4rem;}
     .rec-row{display:flex; align-items:center; justify-content:space-between; gap:12px;}
 
-    /* ===========================================================
-       Make inputs/selects/uploaders look like the same textbox
-    ============================================================ */
     .stTextInput>div>div,
     .stTextArea>div>div,
     .stNumberInput>div>div,
@@ -1301,24 +1495,15 @@ def render_app_title():
     div[data-baseweb="select"] *{
       color: var(--m7-on-surface) !important;
     }
-    /* placeholder color per theme */
     .stTextInput input::placeholder,
     .stTextArea textarea::placeholder{ color: rgba(16,24,39,.55) !important; }
     @media (prefers-color-scheme: dark){
       .stTextInput input::placeholder,
       .stTextArea textarea::placeholder{ color: rgba(255,255,255,.75) !important; }
     }
-    /* ==== Force file uploader placeholder text to follow theme ==== */
-    div[data-testid="stFileUploaderDropzone"] label span {
-    color: var(--m7-on-surface) !important;
-    opacity: 1 !important;
-    }
-    div[data-testid="stFileUploaderDropzone"] label {
-    color: var(--m7-on-surface) !important;
-    }
-    /* ===========================================================
-       Code / pre blocks & Markdown text boxes
-    ============================================================ */
+    div[data-testid="stFileUploaderDropzone"] label span { color: var(--m7-on-surface) !important; opacity: 1 !important; }
+    div[data-testid="stFileUploaderDropzone"] label { color: var(--m7-on-surface) !important; }
+
     .stMarkdown pre,
     pre[class*="language-"],
     .stCodeBlock{
@@ -1331,9 +1516,6 @@ def render_app_title():
     }
     .stMarkdown pre code{ background: transparent !important; color: inherit !important; }
 
-    /* ===========================================================
-       DataFrame wrapper
-    ============================================================ */
     div[data-testid="stDataFrame"]{
       background: var(--m7-surface);
       border: 1px solid var(--m7-border);
@@ -1368,10 +1550,8 @@ for key, default in [
 def _get_query_param(key: str) -> Optional[str]:
     val = None
     try:
-        # New API (1.30+)
         val = st.query_params.get(key)
     except Exception:
-        # Legacy API
         q = st.experimental_get_query_params()
         v = q.get(key)
         if isinstance(v, list): val = v[0] if v else None
@@ -1831,16 +2011,31 @@ def build_spans_by_param(script_text: str, data: dict, heading_ranges: Optional[
             st.session_state["aoi_match_ranges"][aid] = (s, e)
     return spans_map
 
-# ---------- History ----------
+# ---------- History (S3-aware) ----------
 def _maybe_copy_docx_to_history(source_docx_path: Optional[str], run_id: str) -> Optional[str]:
     """Copy the DOCX used for rendering into outputs/_history so Recents can re-render identically."""
     try:
-        if not source_docx_path or not os.path.exists(source_docx_path):
+        if not source_docx_path:
             return None
-        dst = os.path.join(HISTORY_DIR, f"{run_id}.docx")
-        if os.path.abspath(source_docx_path) != os.path.abspath(dst):
-            shutil.copyfile(source_docx_path, dst)
-        return dst
+        # If already an S3 key/url, just store the key in history blob
+        if source_docx_path.startswith("s3://") or (_s3_enabled() and not os.path.exists(source_docx_path)):
+            # ensure it's uploaded under our history key if it's a local temp in S3 mode
+            if os.path.exists(source_docx_path):
+                with open(source_docx_path, "rb") as f:
+                    save_bytes_key(f"{HISTORY_DIR}/{run_id}.docx", f.read())
+                return f"{HISTORY_DIR}/{run_id}.docx"
+            return source_docx_path
+
+        # Local file path
+        if _s3_enabled():
+            with open(source_docx_path, "rb") as f:
+                save_bytes_key(f"{HISTORY_DIR}/{run_id}.docx", f.read())
+            return f"{HISTORY_DIR}/{run_id}.docx"
+        else:
+            dst = os.path.join(HISTORY_DIR, f"{run_id}.docx")
+            if os.path.abspath(source_docx_path) != os.path.abspath(dst):
+                shutil.copyfile(source_docx_path, dst)
+            return dst
     except Exception:
         return None
 
@@ -1853,7 +2048,7 @@ def _save_history_snapshot(title: str, data: dict, script_text: str,
     created_at_human = now.strftime("%Y-%m-%d %H:%M:%S")
 
     # Copy stable DOCX alongside history JSON (so Recents uses identical renderer)
-    stable_docx = _maybe_copy_docx_to_history(source_docx_path, run_id)
+    stable_docx_key_or_path = _maybe_copy_docx_to_history(source_docx_path, run_id)
 
     blob = {
         "run_id": run_id, "title": title or "untitled",
@@ -1861,35 +2056,59 @@ def _save_history_snapshot(title: str, data: dict, script_text: str,
         "overall_rating": (data or {}).get("overall_rating", ""),
         "scores": (data or {}).get("scores", {}),
         "data": data or {}, "script_text": script_text or "",
-        "source_docx_path": stable_docx or source_docx_path,
+        "source_docx_path": stable_docx_key_or_path or source_docx_path,
         "heading_ranges": heading_ranges or [],
         "spans_by_param": spans_by_param or {},
         "aoi_match_ranges": aoi_match_ranges or {},
     }
-    out_fp = os.path.join(HISTORY_DIR, f"{created_at_iso.replace(':','-')}__{run_id}.json")
-    with open(out_fp, "w", encoding="utf-8") as f: json.dump(blob, f, ensure_ascii=False, indent=2)
+
+    # Persist JSON (S3 or local)
+    out_name = f"{created_at_iso.replace(':','-')}__{run_id}.json"
+    out_key = f"{HISTORY_DIR}/{out_name}"
+    save_text_key(out_key, json.dumps(blob, ensure_ascii=False, indent=2))
 
 def _load_all_history() -> List[dict]:
-    out = []
-    for fp in sorted(glob.glob(os.path.join(HISTORY_DIR, "*.json"))):
-        try:
-            with open(fp, "r", encoding="utf-8") as f: j = json.load(f)
-        except Exception: continue
-        j.setdefault("_path", fp)
-        ca = j.get("created_at")
-        try:
-            if isinstance(ca, (int, float)):
-                dt = datetime.datetime.utcfromtimestamp(float(ca))
-                j["created_at"] = dt.replace(microsecond=0).isoformat() + "Z"
-                if not j.get("created_at_human"): j["created_at_human"] = dt.astimezone().strftime("%Y-%m-%d %H:%M:%S")
-            elif isinstance(ca, str) and ca: pass
-            else:
-                mtime = os.path.getmtime(fp); dt = datetime.datetime.fromtimestamp(mtime)
-                j["created_at"] = dt.replace(microsecond=0).isoformat() + "Z"
-                if not j.get("created_at_human"): j["created_at_human"] = dt.strftime("%Y-%m-%d %H:%M:%S")
-        except Exception:
-            j["created_at"] = str(ca or "")
-        out.append(j)
+    out: List[dict] = []
+    if _s3_enabled():
+        keys = sorted(list_prefix(HISTORY_DIR), reverse=True)
+        for key in keys:
+            try:
+                txt = read_text_key(key, "")
+                if not txt:
+                    continue
+                j = json.loads(txt)
+                j["_key"] = key
+                if not j.get("created_at_human") and j.get("created_at"):
+                    try:
+                        dt = datetime.datetime.fromisoformat(j["created_at"])
+                        j["created_at_human"] = dt.strftime("%Y-%m-%d %H:%M:%S")
+                    except Exception:
+                        pass
+                out.append(j)
+            except Exception:
+                continue
+    else:
+        for fp in sorted(glob.glob(os.path.join(HISTORY_DIR, "*.json"))):
+            try:
+                with open(fp, "r", encoding="utf-8") as f:
+                    j = json.load(f)
+            except Exception:
+                continue
+            j.setdefault("_path", fp)
+            ca = j.get("created_at")
+            try:
+                if isinstance(ca, (int, float)):
+                    dt = datetime.datetime.utcfromtimestamp(float(ca))
+                    j["created_at"] = dt.replace(microsecond=0).isoformat() + "Z"
+                    if not j.get("created_at_human"): j["created_at_human"] = dt.astimezone().strftime("%Y-%m-%d %H:%M:%S")
+                elif isinstance(ca, str) and ca: pass
+                else:
+                    mtime = os.path.getmtime(fp); dt = datetime.datetime.fromtimestamp(mtime)
+                    j["created_at"] = dt.replace(microsecond=0).isoformat() + "Z"
+                    if not j.get("created_at_human"): j["created_at_human"] = dt.strftime("%Y-%m-%d %H:%M:%S")
+            except Exception:
+                j["created_at"] = str(ca or "")
+            out.append(j)
     out.sort(key=lambda r: r.get("created_at") or "", reverse=True)
     return out
 
@@ -1899,12 +2118,21 @@ def _open_history_run_by_id(run_id: str) -> bool:
     recs = _load_all_history()
     match = next((r for r in recs if r.get("run_id") == run_id), None)
     if not match: return False
-    path = match.get("_path")
-    if not path or not os.path.exists(path): return False
+
+    # Load JSON content again (S3/local), then set session
     try:
-        with open(path, "r", encoding="utf-8") as f: jj = json.load(f)
+        if "_key" in match and _s3_enabled():
+            txt = read_text_key(match["_key"], "")
+            if not txt: return False
+            jj = json.loads(txt)
+        else:
+            path = match.get("_path")
+            if not path or not os.path.exists(path): return False
+            with open(path, "r", encoding="utf-8") as f:
+                jj = json.load(f)
     except Exception:
         return False
+
     st.session_state.script_text      = jj.get("script_text","")
     st.session_state.base_stem        = jj.get("title","untitled")
     st.session_state.data             = jj.get("data",{})
@@ -1934,14 +2162,13 @@ def _render_recents_centerpane():
     for rec in recs:
         run_id = rec.get("run_id"); title = rec.get("title") or "(untitled)"
         created_h = rec.get("created_at_human",""); overall = rec.get("overall_rating","")
-        card_html = f"""
+        st.markdown(f"""
         <a class="rec-card" href="?open={run_id}">
           <div class="rec-title">{title}</div>
           <div class="rec-meta">{created_h}</div>
           <div><strong>Overall:</strong> {overall if overall != "" else "—"}/10</div>
         </a>
-        """
-        st.markdown(card_html, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
 # ---------- Sidebar ----------
 with st.sidebar:
@@ -1977,15 +2204,21 @@ def render_home():
     (tab_upload,) = st.tabs(["Upload file"])
     uploaded_file = None
     uploaded_name = None
+    uploaded_key  = None
 
     with tab_upload:
         up = st.file_uploader("Upload .pdf / .docx / .txt", type=["pdf","docx","txt"])
         if up is not None:
+            file_bytes = up.read()
             suffix = os.path.splitext(up.name)[1].lower()
+            # Save to S3 (or local) under scripts/
+            uploaded_key = f"{SCRIPTS_DIR}/{up.name}"
+            save_bytes_key(uploaded_key, file_bytes)
+
+            # Also create a temp local copy for parsing
             with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-                tmp.write(up.read())
-                tmp_path = tmp.name
-            uploaded_file = tmp_path
+                tmp.write(file_bytes)
+                uploaded_file = tmp.name
             uploaded_name = os.path.splitext(os.path.basename(up.name))[0] or "uploaded_script"
 
     if st.button("🚀 Run Review", type="primary", use_container_width=True):
@@ -1995,6 +2228,7 @@ def render_home():
 
         if uploaded_file:
             base_stem = uploaded_name or "uploaded_script"
+            # Prefer key (so we can store it into history); for DOCX rendering we keep a tmp local
             if uploaded_file.lower().endswith(".docx"):
                 path_to_use = uploaded_file
                 if _docx_contains_tables(path_to_use):
@@ -2003,9 +2237,13 @@ def render_home():
                     st.session_state.flatten_used = True
                     path_to_use = flat
                 script_text, heading_ranges = build_docx_text_with_meta(path_to_use)
+
+                # 🔑 IMPORTANT: set the rendering source to the *flattened* docx
+                # (History saver will copy this file to Scriptmodel/outputs/_history/)
                 source_docx_path = path_to_use
             else:
                 script_text = load_script_file(uploaded_file)
+                source_docx_path = uploaded_key or uploaded_file  # keep reference to S3/local
         else:
             st.warning("Please upload a script first.")
             st.stop()
@@ -2022,7 +2260,8 @@ def render_home():
                     temperature=0.0
                 )
             finally:
-                if uploaded_file and not source_docx_path:
+                # Clean temp upload if we didn't keep it as source_docx_path local
+                if uploaded_file and not (isinstance(source_docx_path, str) and os.path.exists(source_docx_path)):
                     try:
                         os.remove(uploaded_file)
                     except Exception:
@@ -2063,6 +2302,16 @@ def render_review():
     spans_by_param  = st.session_state.spans_by_param
     scores: Dict[str,int] = (data or {}).get("scores", {}) or {}
     source_docx_path: Optional[str] = st.session_state.source_docx_path
+
+    # If our source_docx_path is an S3 key/url, ensure we have a local copy for rendering
+    # AFTER (prefer the flattened copy if we have it in-session)
+    docx_local: Optional[str] = None
+    preferred = st.session_state.get("flattened_docx_path") if st.session_state.get("flatten_used") else source_docx_path
+    if preferred:
+        if not os.path.exists(preferred):
+            docx_local = ensure_local_copy(preferred)
+        else:
+            docx_local = preferred
 
     left, center, right = st.columns([1.1, 2.7, 1.4], gap="large")
 
@@ -2184,18 +2433,15 @@ def render_review():
 
         payload_json = json.dumps(aoi_payload, ensure_ascii=False)
 
-        # Theme CSS for the iframe + tooltip CSS
         frame_theme_css = """
         <style>
           :root{
-            /* Light mode */
             --m7-surface: #eef2f7;
             --m7-on-surface: #0f172a;
             --m7-border: rgba(15,23,42,.14);
           }
           @media (prefers-color-scheme: dark){
             :root{
-              /* Dark mode */
               --m7-surface: #2f333a;
               --m7-on-surface: #ffffff;
               --m7-border: rgba(255,255,255,.18);
@@ -2239,10 +2485,10 @@ def render_review():
         </style>
         """
 
-        # Render HTML core (DOCX vs plaintext) with data-aid attributes
-        if st.session_state.source_docx_path and os.path.exists(st.session_state.source_docx_path):
+        # Select rendering source (DOCX with highlights if we have a local path)
+        if docx_local and os.path.splitext(docx_local)[1].lower() == ".docx":
             html_core = render_docx_html_with_highlights(
-                st.session_state.source_docx_path,
+                docx_local,
                 merge_overlaps_and_adjacent(script_text, spans)
             )
         else:
@@ -2267,7 +2513,7 @@ def render_review():
                 '</p></div>'
             )
 
-        # Popup + autosize JS shell  (NO f-string here!)
+        # Popup + autosize JS shell
         html_shell = """
 %%FRAME_THEME_CSS%%
 %%TOOLTIP_CSS%%
@@ -2322,7 +2568,6 @@ def render_review():
     resizeIframe();
   }
 
-  // Click highlight to toggle popup
   wrap.addEventListener('click', (e) => {
     const m = e.target.closest('.aoi-mark');
     if(!m){ hide(); return; }
@@ -2331,15 +2576,12 @@ def render_review():
     e.stopPropagation();
   });
 
-  // Click outside to close
   document.addEventListener('click', (e) => {
     if(!e.target.closest('.aoi-pop') && !e.target.closest('.aoi-mark')) hide();
   });
 })();
 </script>
 """
-
-        # Inject variables via plain string replacement (no brace escaping headaches)
         html_shell = (
             html_shell
             .replace("%%FRAME_THEME_CSS%%", frame_theme_css)
@@ -2348,11 +2590,9 @@ def render_review():
             .replace("__PAYLOAD__", payload_json)
         )
 
-        # Render WITHOUT inner scroll; autosize via JS
         components.html(html_shell, height=400, scrolling=False)
 
 # ---------- Router & query param open ----------
-# If a link like ?open=<run_id> is present, open that review immediately.
 _open_qp = _get_query_param("open")
 if _open_qp and _open_history_run_by_id(_open_qp):
     _clear_query_params()  # avoid re-opening on subsequent reruns
