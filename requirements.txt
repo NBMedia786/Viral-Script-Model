@@ -6,3 +6,6 @@ python-dotenv
 pydantic>=2
 langchain
 langchain-google-genai
+boto3
+botocore
+
